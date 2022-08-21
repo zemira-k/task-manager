@@ -1,6 +1,31 @@
 .Members {
-  img {
-    width: 50px;
-    height: 50px;
+  margin: 0 20px;
+  .members-add-button {
+    background-color: $clr-prime1;
+    color: #ffffff;
+    border: none;
+    width: 265px;
+    height: 45px;
+  }
+  .members-filter-btn,
+  .members-sort-btn {
+    border: 1px solid #7a69ee;
+    width: 118px;
+    height: 42px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23px;
+    color: $clr-prime1;
+    background-color: #ffffff;
+  }
+  .table-header {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 23px;
+  }
+  .table-content {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
   }
 }
