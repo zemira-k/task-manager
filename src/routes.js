@@ -1,10 +1,10 @@
 import { Task } from "./pages/Task";
-import { Contact } from "./pages/Contact";
+import { Member } from "./pages/Member";
 
 export const routes = [
     {
-        path: '/contact',
-        component: Contact
+        path: '/member',
+        component: Member
     },
     {
         path: '/',
