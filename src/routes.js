@@ -4,12 +4,12 @@ import { Member } from "./pages/Member";
 export const routes = [
     {
         path: '/member',
-        element: Member,
+        element: <Member />,
         title: 'Members'
     },
     {
         path: '/',
-        element: Task,
+        element: <Task />,
         title: 'Tasks'
     },
 ]

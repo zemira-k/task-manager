@@ -4,7 +4,8 @@ export const taskService = {
     add,
     getById,
     remove,
-    update
+    update,
+    getEmptyTask
 }
 
 const entityType = "task";
@@ -16,7 +17,7 @@ function query(filter = null) {
 }
 
 function add(newTask) {
-    const newTask = storageService.post(entityType, newTask);
+    newTask = storageService.post(entityType, newTask);
     return newTask;
 }
 
@@ -29,8 +30,19 @@ function remove(taskId) {
     return newTasks;
 }
 function update(updateTask) {
-    const updateTask = storageService.put(entityType, updateTask);
+    updateTask = storageService.put(entityType, updateTask);
     return updateTask;
+}
+
+function getEmptyTask() {
+    return {
+        title: '',
+        time: new Date(), // When does the task need to be done
+        teams: [],
+        members: [],
+        createdAt: new Date(), // Task creation date
+        status: 'todo', // todo/done
+    }
 }
 
 // const filter1 = { done: true, priority: 2, time: new Date(), text: "goalkeeper" }
@@ -45,3 +57,4 @@ function _filter(tasks, filter) {
     ));
     return filterTasks;
 }
+
