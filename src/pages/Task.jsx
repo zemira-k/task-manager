@@ -1,5 +1,7 @@
-import React from "react";
+import { useState } from 'react';
+import { taskService } from '../services/taskService';
 
 export const Task = () => {
-  return <div>Task</div>;
+  const [tasks, setTasks] = useState(taskService.query());
+  return <section className="task-page"></section>;
 };

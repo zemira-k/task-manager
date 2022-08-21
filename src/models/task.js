@@ -20,6 +20,7 @@ const task = {
     time: new Date(), // When does the task need to be done
     teams: ['String array'],
     members: [{ member }],
-    createdAt: new Date(Date.now()) // Task creation date
+    createdAt: new Date(Date.now()), // Task creation date
+    status: 'todo', // todo/done
 }
 

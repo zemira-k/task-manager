@@ -6,11 +6,11 @@ export const dataService = {
     removeData
 }
 
-function initData(){
+function initData() {
     storageService.newEntity("task", Task)
     storageService.newEntity("contact", Contact)
 }
 
-function removeData(){
+function removeData() {
     storageService.deleteStorage()
 }
