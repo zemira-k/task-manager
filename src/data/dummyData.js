@@ -1,17 +1,27 @@
-export const AppInfo = {
-    name: "DocTask",
-    user: "Harel Hazan",
-    mail: "hazandev@gmail.com"
+import Avatar1 from '../assets/imgs/demo-members/1.jpg'
 
-}
 export const Task = [
     {
-        _id: "t0001",
-        title: "Plan tactic to players",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae qui aperiam maxime hic fugiat a magnam, corrupti neque iusto tenetur nesciunt impedit sit nisi quam reprehenderit cum distinctio optio Dolor",
-        time: new Date(),
-        priority: 3,
-        done: false
+        _id: '123',
+        title: 'Emptying rubbish and bins',
+        time: new Date(), // When does the task need to be done
+        teams: [{
+            _id: '21',
+            name: 'Cleaning',
+            color: '#08C7E0'
+        }],
+        members: [{
+            _id: '12',
+            fullname: 'Sara omami',
+            avatar: Avatar1,
+            email: 'Sara567@gmail.com',
+            phone: '051-856-753',
+            role: 'Cleaner',
+            memberNum: 567,
+
+        }],
+        createdAt: new Date(Date.now() - (60 * 1000 ** 2 * 24)), // Task creation date
+        status: 'todo', // todo/done
     },
 
 ]
@@ -40,4 +50,10 @@ export const Contact = [
         role: "coach",
         officalID: "125487369"
     }
+]
+
+export const teams = [
+    'Cleaning',
+    'Kitchen',
+    'Childcare',
 ]

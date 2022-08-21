@@ -30,7 +30,7 @@ function post(entityType, newEntity) {
 
 function put(entityType, updateEntity) {
     const entities = query(entityType);
-    const index = entities.findIndex( el => el._id === updateEntity._id);
+    const index = entities.findIndex(el => el._id === updateEntity._id);
     entities[index] = updateEntity;
     _save(entityType, entities)
     return updateEntity
@@ -38,8 +38,8 @@ function put(entityType, updateEntity) {
 
 function remove(entityType, entityId) {
     const entities = query(entityType);
-    const index = entities.findIndex( el => el._id === entityId);
-    entities.splice(index,1);
+    const index = entities.findIndex(el => el._id === entityId);
+    entities.splice(index, 1);
     _save(entityType, entities)
     return entities
 }
@@ -48,11 +48,11 @@ function _save(entityType, entities) {
     localStorage.setItem(entityType, JSON.stringify(entities))
 }
 
-function newEntity(entityType, entityArr){
+function newEntity(entityType, entityArr) {
     _save(entityType, entityArr)
 }
 
-function deleteStorage(){
+function deleteStorage() {
     localStorage.clear()
 }
 

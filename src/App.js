@@ -6,7 +6,7 @@ import { AppHeader } from "./cmps/layout/AppHeader"
 import { routes } from "./routes.js";
 export const App = () => {
   useEffect(() => {
-    dataService.removeData()
+    dataService.removeData();
     dataService.initData();
   }, [])
 
