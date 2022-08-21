@@ -10,8 +10,6 @@ export const App = () => {
     dataService.initData();
   }, [])
 
-  //www.firstProject.com/ => Task
-  //www.firstProject.com/Contact => Contact
   return (
     <div className="App">
       <Router>
