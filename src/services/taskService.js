@@ -9,13 +9,6 @@ export const taskService = {
 
 const entityType = "task";
 
-// _id : "t0001",
-// title: "Plan tactic to players",
-// desc : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae qui aperiam maxime hic fugiat a magnam, corrupti neque iusto tenetur nesciunt impedit sit nisi quam reprehenderit cum distinctio optio Dolor",
-// time : new Date(),
-// priority: 3,
-// done : false
-
 function query(filter = null) {
     let tasks = storageService.query(entityType);
     if (filter) tasks = _filter(tasks, filter);
@@ -23,16 +16,16 @@ function query(filter = null) {
 }
 
 function add(newTask) {
-    const newTask =  storageService.post(entityType,newTask);
+    const newTask = storageService.post(entityType, newTask);
     return newTask;
 }
 
 function getById(taskId) {
-    const task = storageService.getById(entityType,taskId);
+    const task = storageService.getById(entityType, taskId);
     return task;
 }
 function remove(taskId) {
-    const newTasks = storageService.remove(entityType,taskId);
+    const newTasks = storageService.remove(entityType, taskId);
     return newTasks;
 }
 function update(updateTask) {

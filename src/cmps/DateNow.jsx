@@ -1,7 +1,7 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 
 export const DateNow = () => {
-    const [dateNow, setDateNow] = useState("22.4") 
+  const [dateNow, setDateNow] = useState((new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(new Date())))
   return (
     <div className='DateNow'>{dateNow}</div>
   )

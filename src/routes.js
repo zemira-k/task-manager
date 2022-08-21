@@ -1,13 +1,15 @@
-import { Task } from "./pages/Task";
-import { Members } from "./pages/Members";
+import { Task } from './pages/Task';
+import { Member } from './pages/Member';
 
 export const routes = [
   {
-    path: "/member",
-    component: Members,
+    path: '/member',
+    element: Member,
+    title: 'Members',
   },
   {
-    path: "/",
-    component: Task,
+    path: '/',
+    element: Task,
+    title: 'Tasks',
   },
 ];
