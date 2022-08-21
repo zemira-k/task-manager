@@ -19,7 +19,7 @@ export const App = () => {
         <main>
           <Routes>
             {
-              routes.map(route => <Route key={route.path} element={route.component} path={route.path} />)
+              routes.map(route => <Route key={route.path} element={route.element} path={route.path} />)
             }
           </Routes>
         </main>

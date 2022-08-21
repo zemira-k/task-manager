@@ -1,18 +1,15 @@
 import React from 'react';
-import { Logo } from '../Logo';
+import { useCurrentPath } from '../../hooks/useCurrentPath';
 import { DateNow } from '../DateNow';
-import { Navbar } from '../Navbar';
 export const AppHeader = () => {
+	const path = useCurrentPath()
 	return (
-		<div className="AppHeader">
-			<div className="left">
-				<Logo />
-			</div>
-			<div className="center">
-				<Navbar />
+		<div className="app-header flex align-center">
+			<div className="left flex align-center gap-1">
+				<h2 className="page-title">{path}</h2>
+				<DateNow />
 			</div>
 			<div className="right">
-				<DateNow />
 			</div>
 		</div>
 	);

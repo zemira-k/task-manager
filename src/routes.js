@@ -4,10 +4,12 @@ import { Member } from "./pages/Member";
 export const routes = [
     {
         path: '/member',
-        component: Member
+        element: Member,
+        title: 'Members'
     },
     {
         path: '/',
-        component: Task
+        element: Task,
+        title: 'Tasks'
     },
 ]

@@ -1,7 +1,9 @@
-.AppHeader{
+.app-header {
     height: 7vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10px;
+    padding: 3rem 1rem;
+    box-shadow: 5px 4px 20px #5b4ccc40;
+
+    .page-title {
+        color: $clr-prime2;
+    }
 }
