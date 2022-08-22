@@ -1,11 +1,16 @@
 import React from 'react';
 import avatar from '../assets/imgs/demo-members/1.jpg';
+import closeButton from '../assets/icons/close.svg';
 
 export const NewMember = () => {
   return (
     <div className="popup popup-open">
       <div className="newMember">
         <form className="flex column align-center justify-center">
+          <button
+            // onClick={}
+            className="popup-close clean-btn"
+          ></button>
           <p className="form-title">Member profile</p>
           <div
             style={{

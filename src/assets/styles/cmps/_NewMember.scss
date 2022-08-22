@@ -68,3 +68,18 @@
   opacity: 1;
   transition: visibility 0.5s, opacity 0.5s linear;
 }
+
+.popup-close {
+  background-image: url(../../icons/close.svg);
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+  top: 37px;
+  left: 28px;
+  position: absolute;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  // transition: visibility 0.5s, opacity 0.5s linear;
+}
