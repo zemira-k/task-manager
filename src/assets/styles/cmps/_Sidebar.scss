@@ -1,0 +1,56 @@
+.side-bar {
+
+    .MuiIconButton-root {
+
+        &:hover {
+            background: transparent;
+
+            &:hover {
+                background: transparent;
+                background-color: transparent;
+                color: $clr-prime4;
+
+                svg {
+                    path {
+                        fill: $clr-prime4;
+                    }
+                }
+            }
+
+        }
+
+        svg.menu-icon {
+            width: 24px;
+            fill: $clr-prime3;
+        }
+    }
+
+    .MuiListItem-root {
+        color: $clr-prime3;
+
+        .MuiListItemButton-root {
+            &:hover {
+                background: transparent;
+                color: $clr-prime4;
+
+                svg {
+                    path {
+                        fill: $clr-prime4;
+                    }
+                }
+            }
+
+        }
+
+        .MuiListItemIcon-root {
+
+
+            svg {
+                path {
+
+                    fill: $clr-prime3;
+                }
+            }
+        }
+    }
+}
