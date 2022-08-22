@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { dataService } from "./services/generalService/dataService";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
 import { AppHeader } from "./cmps/layout/AppHeader"
 import { routes } from "./routes.js";
 import { Sidebar } from "./cmps/Sidebar";
+
 export const App = () => {
   useEffect(() => {
     dataService.removeData();
