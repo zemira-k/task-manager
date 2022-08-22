@@ -19,6 +19,9 @@ import DemoMemberAvatar from '../assets/imgs/demo-members/1.jpg'
 import { NavLink } from 'react-router-dom';
 
 const drawerWidth = 240;
+const topIcons = [{ icon: OverviewIcon, txt: 'Overview', path: '/overview' },
+{ icon: TasksIcon, txt: 'Tasks', path: '/' },
+{ icon: MembersIcon, txt: 'Members', path: '/member' }]
 
 const openedMixin = (theme) => ({
     width: drawerWidth,
@@ -80,11 +83,11 @@ export const Sidebar = () => {
     };
 
     return (
-        <Box className="side-bar" sx={{ display: 'flex' }}>
+        <Box className={`side-bar ${isOpen ? 'open' : ''}`} sx={{ display: 'flex' }}>
             <CssBaseline />
             <Backdrop sx={{ background: 'rgba(27, 20, 114, 0.35)' }} open={isOpen} onClick={toggleSidebar} />
 
-            <Drawer variant="permanent" open={isOpen}>
+            <Drawer variant="permanent" open={isOpen} >
                 <DrawerHeader sx={{ justifyContent: isOpen ? 'end' : 'center' }}>
                     <IconButton disableRipple onClick={toggleSidebar}>
                         <MenuIcon />
@@ -93,21 +96,26 @@ export const Sidebar = () => {
 
                 <List sx={{ flex: 1 }}>
                     {
-                        [{ icon: OverviewIcon, txt: 'Overview', path: '/overview' },
-                        { icon: TasksIcon, txt: 'Tasks', path: '/' },
-                        { icon: MembersIcon, txt: 'Members', path: '/member' }].map((el) => (
+                        topIcons.map((el) => (
                             <ListItem
                                 key={el.txt} disablePadding sx={{ display: 'block', ':hover': 'background: transparent' }}>
-                                <ListItemButton
-                                    sx={{
-                                        minHeight: 48,
-                                        justifyContent: isOpen ? 'initial' : 'center',
-                                        px: 2.5,
-                                    }}
-                                    disableRipple
-                                    disableTouchRipple
-                                >
-                                    <NavLink to={el.path}>
+                                <NavLink to={el.path}>
+                                    <ListItemButton
+                                        onClick={() => {
+                                            if (isOpen) toggleSidebar()
+                                        }
+                                        }
+                                        sx={{
+                                            minHeight: 48,
+                                            justifyContent: isOpen ? 'initial' : 'center',
+                                            flexDirection: isOpen ? 'row' : 'column',
+                                            px: 2.5,
+                                        }}
+                                        disableRipple
+                                        disableTouchRipple
+
+                                    >
+
 
                                         <ListItemIcon
                                             sx={{
@@ -118,9 +126,9 @@ export const Sidebar = () => {
                                         >
                                             <el.icon />
                                         </ListItemIcon>
-                                    </NavLink>
-                                    <ListItemText primary={el.txt} sx={{ opacity: isOpen ? 1 : 0 }} />
-                                </ListItemButton>
+                                        <ListItemText primary={el.txt} />
+                                    </ListItemButton>
+                                </NavLink>
                             </ListItem>
                         ))}
                 </List>
@@ -132,6 +140,8 @@ export const Sidebar = () => {
                             sx={{
                                 minHeight: 48,
                                 justifyContent: isOpen ? 'initial' : 'center',
+                                flexDirection: isOpen ? 'row' : 'column',
+
                                 px: 2.5,
                             }}
                             disableRipple
@@ -144,9 +154,10 @@ export const Sidebar = () => {
                                     justifyContent: 'center',
                                 }}
                             >
-                                <Avatar sx={{ border: '3px solid #5B4CCC', width: '32px', height: '32px' }} src={DemoMemberAvatar} />
+                                <Avatar className="column" sx={
+                                    { border: '3px solid #5B4CCC', width: '32px', height: '32px', flexDirection: isOpen ? 'row' : 'column' }} src={DemoMemberAvatar} />
                             </ListItemIcon>
-                            <ListItemText primary={'Sarah'} sx={{ opacity: isOpen ? 1 : 0 }} />
+                            <ListItemText primary={'Sarah'} />
                         </ListItemButton>
                     </ListItem>
                     {
@@ -158,6 +169,7 @@ export const Sidebar = () => {
                                     sx={{
                                         minHeight: 48,
                                         justifyContent: isOpen ? 'initial' : 'center',
+                                        flexDirection: isOpen ? 'row' : 'column',
                                         px: 2.5,
                                     }}
                                     disableRipple
@@ -172,7 +184,7 @@ export const Sidebar = () => {
                                     >
                                         <el.icon />
                                     </ListItemIcon>
-                                    <ListItemText primary={el.txt} sx={{ opacity: isOpen ? 1 : 0 }} />
+                                    <ListItemText primary={el.txt} />
                                 </ListItemButton>
                             </ListItem>
                         ))}

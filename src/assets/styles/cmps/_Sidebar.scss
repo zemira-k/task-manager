@@ -1,6 +1,47 @@
 .side-bar {
 
+    .css-10hburv-MuiTypography-root {
+        font-family: inherit;
+        font-weight: inherit;
+        letter-spacing: inherit;
+    }
+
+    &.open {
+        .MuiListItemButton-root {
+            gap: 8px;
+        }
+    }
+
+    .css-2dum1v-MuiDrawer-docked .MuiDrawer-paper {
+        min-width: 64px;
+        width: calc(64px + 3rem);
+
+        .css-10hburv-MuiTypography-root,
+        .MuiListItemButton-root {
+            font-size: calc(1rem - 3px);
+        }
+    }
+
+    .css-1hsz34s-MuiDrawer-docked .MuiDrawer-paper {
+        padding: 0;
+
+        .MuiListItemButton-root {
+            border-radius: 0;
+        }
+    }
+
+    .MuiPaper-root {
+        padding-top: calc(1rem - 5px);
+        padding-left: calc(1rem - 5px);
+        padding-right: calc(1rem - 5px);
+    }
+
+
+
+
+
     .MuiIconButton-root {
+
 
         &:hover {
             background: transparent;
@@ -20,15 +61,21 @@
         }
 
         svg.menu-icon {
-            width: 24px;
+            width: 28px;
             fill: $clr-prime3;
         }
     }
 
+
+
     .MuiListItem-root {
         color: $clr-prime3;
 
+
+
+
         .MuiListItemButton-root {
+
             &:hover {
                 background: transparent;
                 color: $clr-prime4;
@@ -43,7 +90,7 @@
         }
 
         .MuiListItemIcon-root {
-
+            margin: 0;
 
             svg {
                 path {
@@ -52,5 +99,27 @@
                 }
             }
         }
+    }
+
+    .active {
+        color: $clr-prime2;
+        font-weight: 600;
+
+        &:hover .MuiListItemButton-root,
+        .MuiListItemButton-root {
+            background-color: $clr-prime;
+            box-shadow: inset 0px 8px 9px rgba(91, 76, 204, 0.2);
+            border-radius: 5px;
+
+            svg {
+                fill: $clr-prime2;
+
+                path {
+                    fill: $clr-prime2;
+                }
+            }
+        }
+
+
     }
 }
