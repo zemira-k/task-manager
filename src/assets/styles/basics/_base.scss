@@ -12,8 +12,15 @@ body {
 h1,
 h2 {
     font-family: poppins-bold;
-    font-size: 3.125rem;
     letter-spacing: 0.02em;
+}
+
+h1 {
+    font-size: 3.125rem;
+}
+
+h2 {
+    font-size: 2.5rem;
 }
 
 h3 {
@@ -46,6 +53,8 @@ a {
     font-family: poppins;
     font-size: 0.75em;
     letter-spacing: 0.015em;
+    text-decoration: none;
+    color: inherit;
 }
 
 button {

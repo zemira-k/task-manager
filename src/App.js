@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import { AppHeader } from "./cmps/layout/AppHeader"
 import { routes } from "./routes.js";
+import { Sidebar } from "./cmps/Sidebar";
 export const App = () => {
   useEffect(() => {
-    dataService.removeData()
+    dataService.removeData();
     dataService.initData();
   }, [])
 
@@ -16,6 +17,7 @@ export const App = () => {
         <header>
           <AppHeader />
         </header>
+        <Sidebar />
         <main>
           <Routes>
             {
