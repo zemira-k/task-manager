@@ -16,6 +16,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { Avatar, Backdrop } from '@mui/material';
 import DemoMemberAvatar from '../assets/imgs/demo-members/1.jpg'
+import { NavLink } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -92,9 +93,9 @@ export const Sidebar = () => {
 
                 <List sx={{ flex: 1 }}>
                     {
-                        [{ icon: OverviewIcon, txt: 'Overview' },
-                        { icon: TasksIcon, txt: 'Tasks' },
-                        { icon: MembersIcon, txt: 'Members' }].map((el) => (
+                        [{ icon: OverviewIcon, txt: 'Overview', path: '/overview' },
+                        { icon: TasksIcon, txt: 'Tasks', path: '/' },
+                        { icon: MembersIcon, txt: 'Members', path: '/member' }].map((el) => (
                             <ListItem
                                 key={el.txt} disablePadding sx={{ display: 'block', ':hover': 'background: transparent' }}>
                                 <ListItemButton
@@ -106,15 +107,18 @@ export const Sidebar = () => {
                                     disableRipple
                                     disableTouchRipple
                                 >
-                                    <ListItemIcon
-                                        sx={{
-                                            minWidth: 0,
-                                            mr: isOpen ? 2 : 'auto',
-                                            justifyContent: 'center',
-                                        }}
-                                    >
-                                        <el.icon fill="#5B4CCC" />
-                                    </ListItemIcon>
+                                    <NavLink to={el.path}>
+
+                                        <ListItemIcon
+                                            sx={{
+                                                minWidth: 0,
+                                                mr: isOpen ? 2 : 'auto',
+                                                justifyContent: 'center',
+                                            }}
+                                        >
+                                            <el.icon />
+                                        </ListItemIcon>
+                                    </NavLink>
                                     <ListItemText primary={el.txt} sx={{ opacity: isOpen ? 1 : 0 }} />
                                 </ListItemButton>
                             </ListItem>
