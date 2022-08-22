@@ -82,7 +82,7 @@ export const Member = () => {
           </TableBody>
         </Table>
       </React.Fragment>
-      {/* <NewMember></NewMember> */}
+      <NewMember></NewMember>
     </section>
   );
 };
