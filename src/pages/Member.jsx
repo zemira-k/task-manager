@@ -43,6 +43,8 @@ export const Member = () => {
                 width: `20px`,
                 height: `25px`,
                 backgroundSize: `contain`,
+                marginRight: `8px`,
+                backgroundRepeat: `no-repeat`,
               }}
             />
             filter
@@ -54,6 +56,8 @@ export const Member = () => {
                 width: `20px`,
                 height: `25px`,
                 backgroundSize: `contain`,
+                marginRight: `8px`,
+                backgroundRepeat: `no-repeat`,
               }}
             />
             sort

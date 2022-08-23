@@ -1,0 +1,30 @@
+.member-table {
+  .table-header {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+    padding: 6px 0;
+  }
+  .table-content {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    font-family: poppins;
+    border-bottom: none;
+    text-align: center;
+    padding: 6px 0;
+  }
+  .table-content:first-of-type {
+    text-align: right;
+    text-align: -webkit-right;
+    margin-left: 10px;
+  }
+
+  .table-content:nth-of-type(2) {
+    text-align: left;
+  }
+  .css-12ytik9-MuiTableCell-root {
+    width: 10px;
+  }
+}

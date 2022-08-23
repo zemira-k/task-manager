@@ -8,16 +8,32 @@ import smallBurger from '../assets/icons/smallBurger.svg';
 
 export const MemberTable = ({ members, handleEditMemberClick }) => {
   return (
-    <Table size="small" className="mar-t-63">
+    <Table size="small" className="member-table mar-t-63">
       <TableHead>
         <TableRow>
-          <TableCell></TableCell>
-          <TableCell className="table-header">Full name</TableCell>
-          <TableCell className="table-header">Phone number</TableCell>
-          <TableCell className="table-header">Team</TableCell>
-          <TableCell className="table-header">Start time</TableCell>
-          <TableCell className="table-header">End time</TableCell>
-          <TableCell></TableCell>
+          <TableCell
+            className="table-header"
+            sx={{ width: `60px` }}
+          ></TableCell>
+          <TableCell className="table-header" sx={{ width: `350px` }}>
+            Full name
+          </TableCell>
+          <TableCell className="table-header" sx={{ width: `200px` }}>
+            Phone number
+          </TableCell>
+          <TableCell
+            className="table-header"
+            sx={{ width: `94px`, margin: `0 32px` }}
+          >
+            Team
+          </TableCell>
+          <TableCell className="table-header" sx={{ width: `157px` }}>
+            Start time
+          </TableCell>
+          <TableCell className="table-header" sx={{ width: `167px` }}>
+            End time
+          </TableCell>
+          <TableCell sx={{ width: `60px` }}></TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -31,6 +47,7 @@ export const MemberTable = ({ members, handleEditMemberClick }) => {
                   height: `24px`,
                   backgroundSize: `contain`,
                   borderRadius: `50%`,
+                  marginRight: `10.5px`,
                 }}
               />
             </TableCell>
@@ -51,7 +68,12 @@ export const MemberTable = ({ members, handleEditMemberClick }) => {
             </TableCell>
             <TableCell className="table-content">{member.startTime}</TableCell>
             <TableCell className="table-content">{member.endTime}</TableCell>
-            <TableCell className="table-content">
+            <TableCell
+              className="table-content"
+              style={{
+                textAlign: `-webkit-left`,
+              }}
+            >
               <button
                 className="clean-btn"
                 value={member._id}

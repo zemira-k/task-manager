@@ -1,0 +1,27 @@
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'statistics statistics statistics comments'
+    'Tasks Tasks workers comments';
+  gap: 21px;
+  padding: 10px;
+  .item1 {
+    grid-area: statistics;
+  }
+  .item2 {
+    grid-area: Tasks;
+  }
+  .item3 {
+    grid-area: workers;
+  }
+  .item4 {
+    grid-area: comments;
+  }
+
+  > div {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+}
