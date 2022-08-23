@@ -30,7 +30,6 @@
 // flex helpers
 
 .flex {
-
     display: flex;
 
     >*.full {
@@ -63,7 +62,6 @@
 .portrait-ratio {
     @include aspect-ratio(9, 16);
 }
-
 
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
@@ -189,7 +187,6 @@
     margin: 1rem;
 }
 
-
 // .margin-top
 
 .mt-0 {
@@ -263,7 +260,6 @@
 .m-center {
     margin: 0 auto;
 }
-
 
 // margin-side
 
@@ -374,17 +370,23 @@
     border-radius: 8px;
 }
 
+.br-10 {
+    border-radius: 10px;
+}
+
+.br-50 {
+    border-radius: 50px;
+}
+
 /* PADDING-SIDE */
 
 .ps-xxs {
     padding: 0 0.2rem;
 }
 
-
 .ps-xs {
     padding: 0 0.5rem;
 }
-
 
 .ps-s {
     padding: 0 0.7rem;
@@ -546,9 +548,6 @@
     list-style: none;
 }
 
-
-
-
 .block {
     display: block;
 }
@@ -561,13 +560,11 @@
     display: inline-block;
 }
 
-
 /* font size */
 
 .font-xxs {
     font-size: 0.3rem;
 }
-
 
 .font-xs {
     font-size: 0.5rem;
@@ -619,8 +616,6 @@ font-w2 {
     font-weight: 600;
 }
 
-
-
 .c-white {
     color: #fff;
 }
@@ -634,7 +629,7 @@ font-w2 {
 }
 
 .c-alert {
-    color: #f1c40f
+    color: #f1c40f;
 }
 
 .c-info {
@@ -671,7 +666,7 @@ font-w2 {
 }
 
 .bg-alert {
-    background: #f1c40f
+    background: #f1c40f;
 }
 
 .bg-info {
@@ -690,7 +685,6 @@ font-w2 {
     background: rgba(255, 255, 255, 0.507);
 }
 
-
 /* POINTER */
 .cur-pointer {
     cursor: pointer;
@@ -706,12 +700,13 @@ font-w2 {
 }
 
 .noscroll {
-    overflow-y: hidden
+    overflow-y: hidden;
 }
 
 /* font-family */
 .fam-1 {
-    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'sans-serif';
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto',
+        'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'sans-serif';
 }
 
 .fam-2 {
@@ -738,8 +733,9 @@ font-w2 {
     font-weight: bold;
 }
 
-
-
+a {
+    color: orange;
+}
 
 //position
 
@@ -769,7 +765,6 @@ font-w2 {
     gap: 3rem;
 }
 
-
 .gap-4 {
     gap: 3rem;
 }
@@ -778,10 +773,16 @@ font-w2 {
     gap: 3rem;
 }
 
-
+.gap-25 {
+    gap: 25px;
+}
 
 .lh-20 {
     line-height: 20px;
+}
+
+.lh-35 {
+    line-height: 35px;
 }
 
 .d-none {
@@ -814,6 +815,20 @@ font-w2 {
 
 .mar-l-0 {
     margin-inline-start: 0rem;
+}
+
+.mar-t-56 {
+    margin-top: 56px;
+}
+
+.mar-t-63 {
+    margin-top: 63px;
+}
+
+.clean-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
 }
 
 .clean-link {

@@ -3,7 +3,7 @@ import avatar from '../assets/imgs/demo-members/1.jpg';
 export const AddMember = props => {
   return (
     <div className={`popup ${props.isOpen ? 'popup-open' : ''}`}>
-      <div className="newMember">
+      <div className="add-member">
         <form className="flex column align-center justify-center">
           <button
             onClick={props.handleCloseAddMemberClick}
