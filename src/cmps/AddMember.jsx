@@ -1,23 +1,35 @@
 import React, { useState } from 'react';
 import { memberService } from '../services/memberService';
+import search from '../assets/icons/search.svg';
 
 export const AddMember = ({
   isOpen,
   handleCloseAddMemberClick,
   filteredMember,
 }) => {
+  const {
+    _id,
+    name,
+    avatar,
+    phone,
+    mail,
+    role,
+    officialID,
+    team,
+    startTime,
+    endTime,
+  } = filteredMember[0];
   const [addNewMember, setAddNewMember] = useState({
-    name: filteredMember[0].name,
-    avatar:
-      filteredMember[0].avatar ||
-      'https://randomuser.me/api/portraits/women/35.jpg',
-    phone: filteredMember[0].phone,
-    mail: filteredMember[0].mail,
-    role: filteredMember[0].role,
-    officalID: filteredMember[0].officalID,
-    team: filteredMember[0].team,
-    startTime: filteredMember[0].startTime || '08:10:28',
-    endTime: filteredMember[0].endTime || '15:10:50',
+    _id: _id,
+    name: name,
+    avatar: avatar,
+    phone: phone,
+    mail: mail,
+    role: role,
+    officialID: officialID,
+    team: team,
+    startTime: startTime || '08:10:28',
+    endTime: endTime || '15:10:50',
   });
 
   const handleChange = e => {
@@ -32,8 +44,7 @@ export const AddMember = ({
 
   const hadleEditSubmit = e => {
     e.preventDefault();
-    let updated = memberService.update(addNewMember);
-    console.log(updated);
+    memberService.update(addNewMember);
     handleCloseAddMemberClick();
   };
 
@@ -42,7 +53,7 @@ export const AddMember = ({
       <div className="add-member">
         <form
           className="flex column align-center justify-center"
-          onSubmit={filteredMember[0].name ? hadleEditSubmit : hadleAddSubmit}
+          onSubmit={name ? hadleEditSubmit : hadleAddSubmit}
         >
           <button
             onClick={handleCloseAddMemberClick}
@@ -51,7 +62,7 @@ export const AddMember = ({
           <p className="form-title">Member profile</p>
           <div
             style={{
-              backgroundImage: `url(${filteredMember[0].avatar})`,
+              backgroundImage: `url(${avatar})`,
               width: `96px`,
               height: `96px`,
               backgroundSize: `contain`,
@@ -66,7 +77,7 @@ export const AddMember = ({
                 <input
                   className="form-input"
                   name="name"
-                  defaultValue={filteredMember[0].name}
+                  defaultValue={name}
                   onChange={handleChange}
                 ></input>
               </div>
@@ -76,7 +87,7 @@ export const AddMember = ({
                   className="form-input"
                   name="mail"
                   type="email"
-                  defaultValue={filteredMember[0].mail}
+                  defaultValue={mail}
                   onChange={handleChange}
                 />
               </div>
@@ -87,7 +98,7 @@ export const AddMember = ({
                   name="phone"
                   type="number"
                   minLength={9}
-                  defaultValue={filteredMember[0].phone}
+                  defaultValue={phone}
                   onChange={handleChange}
                   required
                 />
@@ -101,8 +112,8 @@ export const AddMember = ({
                 <label className="form-label">Employee No.*</label>
                 <input
                   className="form-input"
-                  name="officalID"
-                  defaultValue={filteredMember[0].officalID}
+                  name="officialID"
+                  defaultValue={officialID}
                   onChange={handleChange}
                 />
               </div>
@@ -111,18 +122,50 @@ export const AddMember = ({
                 <input
                   className="form-input"
                   name="role"
-                  defaultValue={filteredMember[0].role}
+                  defaultValue={role}
                   onChange={handleChange}
                 ></input>
               </div>
               <div className="flex column">
                 <label className="form-label">Team*</label>
-                <input
+                <div
+                  className="flex align-center"
+                  style={{ width: `192px`, height: `55px` }}
+                >
+                  <div
+                    className="flex align-center space-between"
+                    style={{ width: `166px` }}
+                  >
+                    <button className="search-btn clean-btn flex justify-center">
+                      <div
+                        style={{
+                          backgroundImage: `url(${search})`,
+                          width: `12px`,
+                          height: `12px`,
+                          backgroundSize: `contain`,
+                          backgroundRepeat: `no-repeat`,
+                          alignSelf: `center`,
+                        }}
+                      ></div>
+                      <p
+                        style={{
+                          alignSelf: `center`,
+                          color: `#7A69EE`,
+                          marginLeft: `5px`,
+                        }}
+                      >
+                        search
+                      </p>
+                    </button>
+                    <button className="add-btn clean-btn">+ add</button>
+                  </div>
+                </div>
+                {/* <input
                   className="form-input"
-                  name="team"
-                  defaultValue={filteredMember[0].team}
+                  name="team.title"
+                  defaultValue={team}
                   onChange={handleChange}
-                ></input>
+                ></input> */}
               </div>
             </div>
           </div>

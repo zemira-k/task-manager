@@ -61,6 +61,22 @@
     height: 45px;
     margin: 38px auto;
   }
+  .search-btn {
+    width: 78px;
+    height: 33px;
+    border: 1px solid #7a69ee;
+    border-radius: 50px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 23px;
+  }
+  .add-btn {
+    width: 78px;
+    height: 33px;
+    background: #7a69ee;
+    border-radius: 50px;
+    color: #ffffff;
+  }
 }
 
 .popup {

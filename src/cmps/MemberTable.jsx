@@ -3,6 +3,7 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+
 import smallBurger from '../assets/icons/smallBurger.svg';
 
 export const MemberTable = ({ members, handleEditMemberClick }) => {
@@ -35,7 +36,19 @@ export const MemberTable = ({ members, handleEditMemberClick }) => {
             </TableCell>
             <TableCell className="table-content">{member.name}</TableCell>
             <TableCell className="table-content">{member.phone}</TableCell>
-            <TableCell className="table-content">{member.team}</TableCell>
+            <TableCell
+              className="table-content"
+              style={{
+                backgroundColor: `${member.team.color}`,
+                borderRadius: `50px`,
+                width: `94px`,
+                height: `33px`,
+                color: `#ffffff`,
+                letterSpacing: `0.02em`,
+              }}
+            >
+              {member.team.title}
+            </TableCell>
             <TableCell className="table-content">{member.startTime}</TableCell>
             <TableCell className="table-content">{member.endTime}</TableCell>
             <TableCell className="table-content">

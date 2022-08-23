@@ -1,71 +1,86 @@
-import Avatar1 from '../assets/imgs/demo-members/1.jpg'
+import Avatar1 from '../assets/imgs/demo-members/1.jpg';
 
 export const Task = [
-    {
-        _id: '123',
-        title: 'Emptying rubbish and bins',
-        time: new Date(), // When does the task need to be done
-        teams: [
-            {
-                _id: '21',
-                name: 'Cleaning',
-                color: '#08C7E0',
-            },
-        ],
-        members: [
-            {
-                _id: '12',
-                fullname: 'Sara omami',
-                avatar: Avatar1,
-                email: 'Sara567@gmail.com',
-                phone: '051-856-753',
-                role: 'Cleaner',
-                memberNum: 567,
-            },
-        ],
-        createdAt: new Date(Date.now() - 60 * 1000 ** 2 * 24), // Task creation date
-        status: 'todo', // todo/done
-    },
+  {
+    _id: '123',
+    title: 'Emptying rubbish and bins',
+    time: new Date(), // When does the task need to be done
+    teams: [
+      {
+        _id: '21',
+        name: 'Cleaning',
+        color: '#08C7E0',
+      },
+    ],
+    members: [
+      {
+        _id: '12',
+        fullname: 'Sara omami',
+        avatar: Avatar1,
+        email: 'Sara567@gmail.com',
+        phone: '051-856-753',
+        role: 'Cleaner',
+        memberNum: 567,
+      },
+    ],
+    createdAt: new Date(Date.now() - 60 * 1000 ** 2 * 24), // Task creation date
+    status: 'todo', // todo/done
+  },
 ];
 
 export const Member = [
-    {
-        _id: 'asd12',
-        name: 'zemira',
-        avatar: 'https://randomuser.me/api/portraits/women/35.jpg',
-        phone: '0525348765',
-        mail: 'anazak121@gmail.com',
-        role: 'player',
-        officalID: '315989875',
-        team: 'cleaning',
-        startTime: '10:28:53',
-        endTime: '16:25:03',
+  {
+    _id: 'asd12',
+    name: 'zemira',
+    avatar: 'https://randomuser.me/api/portraits/women/35.jpg',
+    phone: '0525348765',
+    mail: 'anazak121@gmail.com',
+    role: 'player',
+    officialID: '315989875',
+    team: {
+      _id: '01',
+      title: 'Cleaning',
+      color: '#08C7E0',
     },
-    {
-        _id: 'ds21a',
-        name: 'manor solomon',
-        avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
-        phone: '0525348325',
-        mail: 'manor@gmail.com',
-        role: 'player',
-        officalID: '3144989875',
-        team: 'kitchen',
-        startTime: '10:00:22',
-        endTime: '16:00:15',
+    startTime: '10:28:53',
+    endTime: '16:25:03',
+  },
+  {
+    _id: 'ds21a',
+    name: 'manor solomon',
+    avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+    phone: '0525348325',
+    mail: 'manor@gmail.com',
+    role: 'player',
+    officialID: '3144989875',
+    team: {
+      _id: '02',
+      title: 'Kitchen',
+      color: '#FD838F',
     },
-    {
-        _id: 'ds32a',
-        name: 'barak bachar',
-        avatar: 'https://randomuser.me/api/portraits/women/61.jpg',
-        phone: '0525342343',
-        mail: 'barak@gmail.com',
-        role: 'coach',
-        officalID: '125487369',
-        team: 'kitchen',
-        startTime: '08:10:28',
-        endTime: '15:10:50',
+    startTime: '10:00:22',
+    endTime: '16:00:15',
+  },
+  {
+    _id: 'ds32a',
+    name: 'barak bachar',
+    avatar: 'https://randomuser.me/api/portraits/women/61.jpg',
+    phone: '0525342343',
+    mail: 'barak@gmail.com',
+    role: 'coach',
+    officialID: '125487369',
+    team: {
+      _id: '02',
+      title: 'Kitchen',
+      color: '#FD838F',
     },
+    startTime: '08:10:28',
+    endTime: '15:10:50',
+  },
 ];
 
-export const teams = ['Cleaning', 'Kitchen', 'Childcare'];
-
+export const Team = [
+  { _id: '01', title: 'Cleaning', color: '#08C7E0' },
+  { _id: '02', title: 'Kitchen', color: '#FD838F' },
+  { _id: '03', title: 'Childcare', color: '#FFAD7A' },
+];
