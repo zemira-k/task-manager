@@ -69,8 +69,3 @@ export const Member = [
 
 export const teams = ['Cleaning', 'Kitchen', 'Childcare'];
 
-export const teams = [
-    'Cleaning',
-    'Kitchen',
-    'Childcare',
-]
