@@ -11,7 +11,7 @@ export const taskService = {
 const entityType = "task";
 
 function query(filter = null) {
-    let tasks = storageService.query(entityType);
+    let tasks = storageService.query(entityType) || [];
     if (filter) tasks = _filter(tasks, filter);
     return tasks
 }
@@ -36,8 +36,8 @@ function update(updateTask) {
 
 function getEmptyTask() {
     return {
-        title: '',
         time: new Date(), // When does the task need to be done
+        title: '',
         teams: [],
         members: [],
         createdAt: new Date(), // Task creation date
