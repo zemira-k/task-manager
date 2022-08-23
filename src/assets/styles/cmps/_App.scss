@@ -1,0 +1,30 @@
+.App {
+    display: grid;
+    grid-template-areas:
+        "sidebar main-view"
+        "sidebar main-view";
+    grid-template-columns: minmax(65px, calc(64px + 3rem)) 1fr;
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+
+    .main-content {
+        grid-area: main-view;
+        left: calc(64px + 3rem);
+        bottom: 0;
+        right: 0;
+        top: 0;
+        overflow-y: auto;
+        position: absolute;
+    }
+
+    .main-view {
+        min-height: calc(93vh - 2.8rem);
+        align-self: flex-end;
+        flex: 1;
+    }
+
+    .side-bar {
+        grid-area: sidebar;
+    }
+}

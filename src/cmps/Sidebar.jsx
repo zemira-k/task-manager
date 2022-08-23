@@ -17,6 +17,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { Avatar, Backdrop } from '@mui/material';
 import DemoMemberAvatar from '../assets/imgs/demo-members/1.jpg'
 import { NavLink } from 'react-router-dom';
+import { Container } from '@mui/system';
 
 const drawerWidth = 240;
 const topIcons = [{ icon: OverviewIcon, txt: 'Overview', path: '/overview' },
@@ -94,7 +95,7 @@ export const Sidebar = () => {
                     </IconButton>
                 </DrawerHeader>
 
-                <List sx={{ flex: 1 }}>
+                <List sx={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     {
                         topIcons.map((el) => (
                             <ListItem
@@ -115,7 +116,6 @@ export const Sidebar = () => {
                                         disableTouchRipple
 
                                     >
-
 
                                         <ListItemIcon
                                             sx={{

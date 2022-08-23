@@ -14,17 +14,19 @@ export const App = () => {
   return (
     <div className="App">
       <Router>
-        <header>
-          <AppHeader />
-        </header>
-        <Sidebar />
-        <main>
-          <Routes>
-            {
-              routes.map(route => <Route key={route.path} element={route.element} path={route.path} />)
-            }
-          </Routes>
+        <main className="main-content relative flex">
+          <header>
+            <AppHeader />
+          </header>
+          <section className="main-view relative">
+            <Routes>
+              {
+                routes.map(route => <Route key={route.path} element={route.element} path={route.path} />)
+              }
+            </Routes>
+          </section>
         </main>
+        <Sidebar />
       </Router>
     </div>
   );

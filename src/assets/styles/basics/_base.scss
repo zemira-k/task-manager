@@ -2,7 +2,9 @@
     box-sizing: border-box;
 }
 
-body {
+body,
+.App {
+
     font-family: poppins;
     letter-spacing: 0.005em;
     background-color: $clr-bg;
@@ -34,12 +36,6 @@ h4 {
     font-family: poppins-medium;
     font-size: 1.5625rem;
     letter-spacing: 0.01em;
-}
-
-section,
-main,
-footer {
-    padding: 0.3rem;
 }
 
 img {

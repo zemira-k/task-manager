@@ -20,6 +20,20 @@
         .MuiListItemButton-root {
             font-size: calc(1rem - 3px);
         }
+
+        .MuiListItemButton-root {
+            justify-content: center;
+            height: 70px;
+            width: 70px;
+            padding: 1.4rem 1rem;
+            margin: auto;
+        }
+
+        .css-tlelie-MuiListItemText-root {
+            flex: auto;
+            margin: 0;
+
+        }
     }
 
     .css-1hsz34s-MuiDrawer-docked .MuiDrawer-paper {
