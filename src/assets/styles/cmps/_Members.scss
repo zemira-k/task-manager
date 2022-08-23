@@ -1,5 +1,6 @@
 .Members {
   margin: 0 20px;
+  font-family: poppins;
   .members-add-button {
     background-color: $clr-prime1;
     color: #ffffff;
@@ -27,5 +28,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 23px;
+    font-family: poppins;
+    border-bottom: none;
   }
 }

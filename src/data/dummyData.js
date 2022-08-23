@@ -28,7 +28,7 @@ export const Task = [
   },
 ];
 
-export const Contact = [
+export const Member = [
   {
     _id: 'asd12',
     name: 'zemira',
@@ -38,6 +38,8 @@ export const Contact = [
     role: 'player',
     officalID: '315989875',
     team: 'cleaning',
+    startTime: '10:28:53',
+    endTime: '16:25:03',
   },
   {
     _id: 'ds21a',
@@ -48,6 +50,8 @@ export const Contact = [
     role: 'player',
     officalID: '3144989875',
     team: 'kitchen',
+    startTime: '10:00:22',
+    endTime: '16:00:15',
   },
   {
     _id: 'ds32a',
@@ -58,6 +62,8 @@ export const Contact = [
     role: 'coach',
     officalID: '125487369',
     team: 'kitchen',
+    startTime: '08:10:28',
+    endTime: '15:10:50',
   },
 ];
 
