@@ -1,4 +1,6 @@
 import { storageService } from './generalService/storageService';
+import smallUpload from '../assets/icons/smallUpload.svg';
+
 export const memberService = {
   query,
   add,
@@ -37,12 +39,14 @@ function getEmptyMember() {
   return [
     {
       name: '',
-      avatar: '',
+      avatar: smallUpload,
       phone: '',
       mail: '',
       role: '',
       officalID: '',
       team: '',
+      startTime: '08:10:28',
+      endTime: '15:10:50',
     },
   ];
 }
