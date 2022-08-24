@@ -1,3 +1,3 @@
 export const DailyTasks = () => {
-  return <div className="Daily-tasks">Daily Tasks</div>;
+  return <div className="Daily-tasks"></div>;
 };
