@@ -1,3 +1,3 @@
 export const Comments = () => {
-  return <div className="comments">comments</div>;
+  return <div className="comments"></div>;
 };
