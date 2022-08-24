@@ -10,9 +10,7 @@ export const Workers = () => {
   let members = memberService.query();
   return (
     <div className="workers">
-      <div>workers</div>
-
-      <Table size="small" className="member-table mar-t-17">
+      <Table size="small" className="member-table">
         <TableHead>
           <TableRow>
             <TableCell
