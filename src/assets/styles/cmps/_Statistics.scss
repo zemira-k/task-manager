@@ -1,0 +1,26 @@
+.statistics {
+  .progress-bar-container {
+    gap: 129px;
+    margin: auto;
+    max-width: min-content;
+  }
+  .CircularProgressbar-text {
+    transform: translate(-22px, 10px);
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24.487px;
+    line-height: 37px;
+    letter-spacing: 0.01em;
+    color: #0b0830;
+  }
+  .statistics-content {
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: 0.005em;
+    color: #0b0830;
+    width: 111px;
+  }
+}

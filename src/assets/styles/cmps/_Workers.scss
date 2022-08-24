@@ -1,0 +1,21 @@
+.workers {
+  .css-rqglhn-MuiTable-root,
+  .css-15wwp11-MuiTableHead-root {
+    width: 90%;
+    margin: 17px auto;
+  }
+  .table-header {
+    font-size: 12px;
+    font-family: 'Poppins';
+  }
+  .table-header:nth-of-type(2) {
+    padding: 6px 60px 6px 0;
+  }
+  .table-content {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    letter-spacing: 0.005em;
+    color: #0b0830;
+  }
+}

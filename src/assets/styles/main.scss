@@ -1,23 +1,27 @@
 // Setup
-@import "setup/variables";
-@import "setup/functions";
-@import "setup/mixins";
-@import "setup/typography";
+@import 'setup/variables';
+@import 'setup/functions';
+@import 'setup/mixins';
+@import 'setup/typography';
 
 // Basics
-@import "basics/reset";
-@import "basics/helpers";
-@import "basics/base";
+@import 'basics/reset';
+@import 'basics/helpers';
+@import 'basics/base';
 
 //Base
-@import "basics/layout";
-@import "basics/media";
+@import 'basics/layout';
+@import 'basics/media';
 
 // Components
-@import "cmps/AppHeader";
-@import "cmps/Sidebar";
-@import "cmps/App";
-@import "cmps/AddMember";
+@import 'cmps/AppHeader';
+@import 'cmps/Sidebar';
+@import 'cmps/App';
+@import 'cmps/AddMember';
+@import 'cmps/MemberTable';
+@import 'cmps/Statistics';
+@import 'cmps/Workers';
 
-// Pages 
-@import "cmps/Members";
+// Pages
+@import 'cmps/Members';
+@import 'cmps/Overview';
