@@ -1,15 +1,15 @@
 .member-table {
   .table-header {
     font-weight: 600;
-    font-size: 16px;
-    line-height: 23px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     text-align: center;
     padding: 6px 0;
   }
   .table-content {
     font-weight: 400;
-    font-size: 16px;
-    line-height: 23px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-family: poppins;
     border-bottom: none;
     text-align: center;
@@ -26,5 +26,26 @@
   }
   .css-12ytik9-MuiTableCell-root {
     width: 10px;
+  }
+  .table-content-type-team {
+    border-radius: 50px;
+    width: 94px;
+    height: 33px;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    padding-top: 5px;
+  }
+  .table-content-type-avatar {
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    border-radius: 50%;
+    margin-right: 10.5px;
+  }
+  .table-content-type-burger {
+    width: 6px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }

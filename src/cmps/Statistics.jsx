@@ -20,7 +20,13 @@ export const Statistics = () => {
       <div className="progress-bar-container flex justify-center">
         {statisticsContent.map((content, i) => (
           <div className="statistics-content" key={i}>
-            <div style={{ width: `103px`, height: `103px`, margin: `auto` }}>
+            <div
+              style={{
+                width: `6.4375rem`,
+                height: `6.4375rem`,
+                margin: `auto`,
+              }}
+            >
               <CircularProgressbar
                 value={content.percentage}
                 text={`${content.percentage}%`}

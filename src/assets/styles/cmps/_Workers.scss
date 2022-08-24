@@ -5,7 +5,7 @@
     margin: 17px auto;
   }
   .table-header {
-    font-size: 12px;
+    font-size: 0.75rem;
     font-family: 'Poppins';
   }
   .table-header:nth-of-type(2) {
@@ -13,9 +13,16 @@
   }
   .table-content {
     font-weight: 400;
-    font-size: 12px;
-    line-height: 17px;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
     letter-spacing: 0.005em;
     color: #0b0830;
+  }
+  .member-avatar {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: contain;
+    border-radius: 50%;
+    margin-right: 10.5px;
   }
 }

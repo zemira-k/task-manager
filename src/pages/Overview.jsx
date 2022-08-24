@@ -43,8 +43,8 @@ export const Overview = () => {
             <div
               style={{
                 backgroundImage: `url(${title.icon})`,
-                width: `16px`,
-                height: `16px`,
+                width: `1rem`,
+                height: `1rem`,
                 backgroundSize: `contain`,
                 backgroundRepeat: `no-repeat`,
               }}
