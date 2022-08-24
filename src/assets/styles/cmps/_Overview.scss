@@ -20,8 +20,21 @@
 
   > div {
     background-color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
+    padding: 28px 0;
     font-size: 30px;
+  }
+  .overview-titles {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 23px;
+    letter-spacing: 0.015em;
+    color: #0b0830;
+  }
+  .title-container {
+    margin-left: 25px;
+    align-items: center;
+  }
+  .overview-titles {
+    margin-left: 8px;
   }
 }
