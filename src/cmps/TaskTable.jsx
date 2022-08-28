@@ -7,10 +7,13 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Checkbox } from '@mui/material';
+import Chip from '@mui/material/Chip';
+import Avatar from '@mui/material/Avatar';
+import AvatarGroup from '@mui/material/AvatarGroup';
 
 const fields = ['Task', 'Teams', 'Members']
 
-export const TaskTable = ({ tasks, onToggleTaskStatus }) => {
+export const TaskTable = ({ tasks, updateTaskFn, setTaskToUpdate }) => {
 
     return (
         <TableContainer sx={{ padding: "1rem" }} component={Paper}>
@@ -21,7 +24,7 @@ export const TaskTable = ({ tasks, onToggleTaskStatus }) => {
                         <TableCell>Times</TableCell>
                         {
                             fields.map(field =>
-                                <TableCell key={field} align="right">{field}</TableCell>
+                                <TableCell key={field} align="center">{field}</TableCell>
                             )
                         }
                     </TableRow>
@@ -29,26 +32,31 @@ export const TaskTable = ({ tasks, onToggleTaskStatus }) => {
                 <TableBody>
                     {tasks.map((task) => {
                         const { title, teams, members } = task
-                        const fieldsToDisplay = [title, JSON.stringify(teams), JSON.stringify(members)]
+                        const fieldsToDisplay = [title,
+                            teams.map(team => <Chip key={team._id} label={team.name} sx={{ background: team.color }} />),
+                            <AvatarGroup max={4} sx={{ justifyContent: 'left' }} >
+                                {members.map(member => <Avatar alt={member.name} src={member.avatar} key={member._id} />)}
+                            </AvatarGroup>]
                         const checked = task.status === 'done'
                         return <TableRow
                             key={task._id}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                            className={`task ${task.status}`}
                         >
 
                             <TableCell component="th" scope="row">
                                 <Checkbox onChange={() => {
                                     task.status = task.status === 'done' ? 'todo' : 'done'
-                                    onToggleTaskStatus(task)
+                                    updateTaskFn(task)
                                 }} checked={checked} />
                             </TableCell>
 
                             <TableCell component="th" scope="row">
-                                {task.time}
+                                {task.time.from + ' - ' + task.time.to}
                             </TableCell>
-                            {fieldsToDisplay.map(field => <TableCell key={field} align="right">{field}</TableCell>)}
-                            <TableCell align="right">
-                                <button className="btn-task-actions">Edit</button>
+                            {fieldsToDisplay.map((field, idx) => <TableCell key={fields[idx]} align="center">{field}</TableCell>)}
+                            <TableCell align="center">
+                                <button onClick={() => setTaskToUpdate(task)} className="btn-task-actions">Edit</button>
                             </TableCell>
 
                         </TableRow>

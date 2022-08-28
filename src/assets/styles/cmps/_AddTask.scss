@@ -1,0 +1,36 @@
+.add-task-modal {
+  inset: 0;
+  position: fixed;
+  background-color: $clr-backdrop;
+  z-index: 30;
+
+
+  .modal-content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background-color: #fff;
+    height: fit-content;
+    width: 50vw;
+    padding-block: 1rem;
+
+    .modal-header {
+      .modal-title {
+        color: $clr-font-disabled;
+        font-size: 1.25rem;
+        flex: 1;
+        text-align: center;
+        margin-inline-start: -16px;
+      }
+
+      .btn-close-modal {
+        transform: translateX(2rem);
+      }
+    }
+
+    .save-task-form {
+      padding: 2rem 1rem;
+    }
+  }
+}
