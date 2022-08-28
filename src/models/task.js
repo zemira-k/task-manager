@@ -17,7 +17,7 @@ const member = {
 const task = {
     _id: '',
     title: '',
-    time: new Date(), // When does the task need to be done
+    time: { from: '10:00', to: '10:30' }, // When does the task need to be done
     teams: ['String array'],
     members: [{ member }],
     createdAt: new Date(Date.now()), // Task creation date

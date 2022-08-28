@@ -1,5 +1,6 @@
 // Colors
 $clr-font: #0b0830;
+$clr-font-disabled: #bcbbbb;
 $clr-bg: #fbfaff;
 $clr-prime: #e6e1fe;
 $clr-prime1: #7a69ee;
@@ -12,6 +13,8 @@ $clr-secondary2: #ebf9ff;
 $clr-error: #f42d2d;
 $clr-warning: #ffa02e;
 $clr-success: #1cb854;
+$clr-backdrop: rgba(27, 20, 114, 0.35);
+$clr-chip-font: #fff;
 
 // Breakpoints
 $mobile-breakpoint: 460px;

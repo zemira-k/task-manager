@@ -32,7 +32,7 @@
 .flex {
   display: flex;
 
-  > *.full {
+  >*.full {
     flex: 1;
   }
 
@@ -161,6 +161,11 @@
 
 .column-reverse {
   flex-direction: column-reverse;
+}
+
+// grid
+.grid {
+  display: grid;
 }
 
 /* MARGIN */
@@ -824,9 +829,11 @@ a {
 .mar-t-63 {
   margin-top: 63px;
 }
+
 .mar-t-17 {
   margin-top: 17px;
 }
+
 .mar-t-11 {
   margin-top: 11px;
 }
