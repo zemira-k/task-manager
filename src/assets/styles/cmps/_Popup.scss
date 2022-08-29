@@ -1,0 +1,52 @@
+.popup {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(27, 20, 114, 0.35);
+  top: 0;
+  left: 0;
+  z-index: 6;
+  visibility: hidden;
+  display: flex;
+  position: fixed;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s linear;
+  pointer-events: auto;
+}
+.popup-open {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.5s, opacity 0.5s linear;
+}
+.form-container {
+  position: relative;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding-bottom: 37.55px;
+}
+
+.popup-close {
+  background-image: url(../../icons/close.svg);
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+  top: 30px;
+  left: 28px;
+  position: absolute;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  // transition: visibility 0.5s, opacity 0.5s linear;
+}
+.save-btn {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  background-color: $clr-prime1;
+  color: #ffffff;
+  border: none;
+  width: 150px;
+  height: 45px;
+  margin: 38px auto;
+}
