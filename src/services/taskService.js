@@ -35,8 +35,10 @@ function update(updateTask) {
 }
 
 function getEmptyTask() {
+    // full hour - new Date().toTimeString().slice(0, 5)
+    const currHour = new Date().getHours()
     return {
-        time: new Date(), // When does the task need to be done
+        time: { from: `${currHour}:00`, to: `${currHour + 1}:00` }, // When does the task need to be done
         title: '',
         teams: [],
         members: [],

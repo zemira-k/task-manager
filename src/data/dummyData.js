@@ -4,7 +4,11 @@ export const Task = [
   {
     _id: '123',
     title: 'Emptying rubbish and bins',
-    time: new Date(), // When does the task need to be done
+    time: {
+      from: `${new Date().getHours()}:00`,
+      to: `${new Date().getHours() + 1}:00`
+    }, // When does the task need to be done
+
     teams: [
       {
         _id: '21',

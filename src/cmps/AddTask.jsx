@@ -1,157 +1,161 @@
-import { useState } from 'react';
-import { taskService } from '../services/taskService';
-import search from '../assets/icons/search.svg';
+import { FormControl, InputLabel, Menu, MenuItem, MenuList, Select, TextField } from '@mui/material';
+import { useEffect, useRef, useState } from 'react';
+import { ReactComponent as CloseIcon } from '../assets/icons/close.svg'
+import { useForm } from '../hooks/useForm';
+import { utilService } from '../services/utilService';
+
+const ITEM_HEIGHT = 48
 
 export const AddTask = ({
-  isOpen,
-  handleCloseAddTaskClick,
+  closeModalFn,
   task,
+  addTaskFn,
+  updateTaskFn,
+
 }) => {
 
-  const [addNewTask, setAddNewTask] = useState(task);
+  const [register, taskToEdit, resetFields, setFields] = useForm(task);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl)
 
-  const handleChange = e => {
-    setAddNewTask({ ...addNewTask, [e.target.name]: e.target.value });
-  };
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  }
 
-  const hadleAddSubmit = e => {
-    e.preventDefault();
-    taskService.add(addNewTask);
-    handleCloseAddTaskClick();
-  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  }
 
-  const hadleEditSubmit = e => {
-    e.preventDefault();
-    taskService.update(addNewTask);
-    handleCloseAddTaskClick();
-  };
+  const modalRef = useRef()
+
+  useEffect(() => {
+    // const handleClickOutsideMenu = ({ target }) => {
+    //   if (open) return
+    //   console.log('object');
+    //   if (modalRef.current && !modalRef.current.contains(target)) {
+    //     closeModalFn()
+    //   }
+    // }
+
+    // document.addEventListener('mousedown', ev => handleClickOutsideMenu(ev))
+    // return () => {
+    //   document.removeEventListener('mousedown', ev =>
+    //     handleClickOutsideMenu(ev)
+    //   )
+    // }
+  }, [modalRef])
+
+
+
+
+
+  const handleSubmit = ev => {
+    ev.preventDefault();
+    !!task._id ? updateTaskFn(taskToEdit) : addTaskFn(taskToEdit)
+    closeModalFn()
+  }
+
+
 
   return (
-    <div className={`popup ${isOpen ? 'popup-open' : ''}`}>
-      <div className="add-task">
-        <form
-          className="flex column align-center justify-center"
-          onSubmit={name ? hadleEditSubmit : hadleAddSubmit}
-        >
-          <button
-            onClick={handleCloseAddTaskClick}
-            className="popup-close clean-btn"
-          ></button>
-          <p className="form-title">Task profile</p>
-          <div
-            style={{
-              backgroundImage: `url(${avatar})`,
-              width: `96px`,
-              height: `96px`,
-              backgroundSize: `contain`,
-              borderRadius: `50%`,
-            }}
-          ></div>
-          <div>
-            <p className="form-subtitle">Personal Settings</p>
-            <div className="flex gap-25">
-              <div className="flex column">
-                <label className="form-label">Full name*</label>
-                <input
-                  className="form-input"
-                  name="name"
-                  defaultValue={name}
-                  onChange={handleChange}
-                ></input>
-              </div>
-              <div className="flex column">
-                <label className="form-label">Email address*</label>
-                <input
-                  className="form-input"
-                  name="mail"
-                  type="email"
-                  defaultValue={mail}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="flex column">
-                <label className="form-label">Phone*</label>
-                <input
-                  className="form-input"
-                  name="phone"
-                  type="number"
-                  minLength={9}
-                  defaultValue={phone}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-            </div>
-          </div>
-          <div>
-            <p className="form-subtitle">Employee Settings</p>
-            <div className="flex gap-25">
-              <div className="flex column">
-                <label className="form-label">Employee No.*</label>
-                <input
-                  className="form-input"
-                  name="officialID"
-                  defaultValue={officialID}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="flex column">
-                <label className="form-label">Role*</label>
-                <input
-                  className="form-input"
-                  name="role"
-                  defaultValue={role}
-                  onChange={handleChange}
-                ></input>
-              </div>
-              <div className="flex column">
-                <label className="form-label">Team*</label>
-                <div
-                  className="flex align-center"
-                  style={{ width: `192px`, height: `55px` }}
-                >
-                  <div
-                    className="flex align-center space-between"
-                    style={{ width: `166px` }}
-                  >
-                    <button className="search-btn clean-btn flex justify-center">
-                      <div
-                        style={{
-                          backgroundImage: `url(${search})`,
-                          width: `12px`,
-                          height: `12px`,
-                          backgroundSize: `contain`,
-                          backgroundRepeat: `no-repeat`,
-                          alignSelf: `center`,
-                        }}
-                      ></div>
-                      <p
-                        style={{
-                          alignSelf: `center`,
-                          color: `#7A69EE`,
-                          marginLeft: `5px`,
-                        }}
-                      >
-                        search
-                      </p>
-                    </button>
-                    <button className="add-btn clean-btn">+ add</button>
-                  </div>
-                </div>
-                {/* <input
-                  className="form-input"
-                  name="team.title"
-                  defaultValue={team}
-                  onChange={handleChange}
-                ></input> */}
-              </div>
-            </div>
-          </div>
-          <button className="save-btn br-10" type="submit">
-            Save
+    <div className='add-task-modal'>
+      <main className="modal-content flex column">
+        <header className="modal-header flex align-center">
+          <button className="btn-close-modal clean-btn flex" onClick={closeModalFn}>
+            <CloseIcon width={16} height={16} />
           </button>
+          <h4 className="modal-title">{task._id ? 'Task edit' : 'Create new task'}</h4>
+        </header>
+
+        <form
+          onSubmit={ev => {
+            handleSubmit(ev)
+          }}
+          className="save-task-form"
+          ref={modalRef}>
+
+          <TextField
+            {...register('title', 'Task')}
+            fullWidth
+            size="small"
+            required
+            margin="dense"
+          />
+          {['from', 'to'].map((timeField) => {
+
+            return <FormControl key={timeField} sx={{ margin: "0.5rem 0.5rem 0.5rem 0", minWidth: 120 }}>
+              <InputLabel htmlFor={`${timeField}-time`}>{utilService.capitalize(timeField)}</InputLabel>
+              <Select
+                size="small"
+                MenuProps={
+                  {
+                    PaperProps: {
+                      style: {
+                        maxHeight: ITEM_HEIGHT * 5,
+                      }
+                    }
+                  }
+                }
+                defaultValue={taskToEdit.time[timeField]} id={`${timeField}-time`} label="From">
+
+                {utilService.getTimeRange().map(time =>
+                  <MenuItem
+                    onClick={() => {
+                      setFields((prevFields) => {
+                        prevFields.time[timeField] = time
+                        return prevFields
+                      })
+                      handleClose()
+                    }} key={time} value={time}>
+                    {time}
+                  </MenuItem>)}
+              </Select>
+
+            </FormControl>
+          })}
+          {/* <TextField
+          margin="dense"
+            size="small"
+            sx={{ width: '6rem' }}
+            value={taskToEdit.time.from}
+            required
+            select
+            onMouseDown={handleClick}
+            label="From"
+          >
+            <Menu
+
+              open={open}
+              anchorEl={anchorEl}
+              onClose={handleClose}
+              PaperProps={{
+                style: {
+                  maxHeight: ITEM_HEIGHT * 4.5,
+                },
+              }}
+              PopoverClasses={{
+                root: "from-time-popover"
+              }}
+            >
+              </Menu>
+
+
+            {utilService.getTimeRange().map(time =>
+              <MenuItem
+              onClick={() => {
+                setFields((prevFields) => {
+                  prevFields.time.from = time
+                  return prevFields
+                })
+                handleClose()
+              }} key={time} value={time}>
+                {time}
+              </MenuItem>)}
+
+
+          </TextField> */}
         </form>
-      </div>
+      </main>
     </div>
   );
 };
