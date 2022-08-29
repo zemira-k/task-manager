@@ -7,25 +7,28 @@ import TableRow from '@mui/material/TableRow';
 import { memberService } from '../services/memberService';
 
 export const Workers = () => {
+  const tableHeaders = [
+    { name: '', width: '1.25rem' },
+    { name: 'Name', width: '6.25rem' },
+    { name: 'Start time', width: '3.75rem' },
+    { name: 'End time', width: '3.75rem' },
+  ];
+
   let members = memberService.query();
   return (
     <div className="workers">
       <Table size="small" className="member-table">
         <TableHead>
           <TableRow>
-            <TableCell
-              className="table-header"
-              sx={{ width: `20px` }}
-            ></TableCell>
-            <TableCell className="table-header" sx={{ width: `100px` }}>
-              Name
-            </TableCell>
-            <TableCell className="table-header" sx={{ width: `60px` }}>
-              Start time
-            </TableCell>
-            <TableCell className="table-header" sx={{ width: `60px` }}>
-              End time
-            </TableCell>
+            {tableHeaders.map((header, i) => (
+              <TableCell
+                key={i}
+                className="table-header"
+                sx={{ width: header.width }}
+              >
+                {header.name}
+              </TableCell>
+            ))}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -33,13 +36,9 @@ export const Workers = () => {
             <TableRow key={member._id}>
               <TableCell className="table-content">
                 <div
+                  className="member-avatar"
                   style={{
                     backgroundImage: `url(${member.avatar})`,
-                    width: `24px`,
-                    height: `24px`,
-                    backgroundSize: `contain`,
-                    borderRadius: `50%`,
-                    marginRight: `10.5px`,
                   }}
                 />
               </TableCell>

@@ -11,6 +11,10 @@ export const Member = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [filteredMember, setFilteredMember] = useState({});
   let memberList = memberService.query();
+  const buttons = [
+    { title: 'filter', icon: sortIcon },
+    { title: 'sort', icon: filterIcon },
+  ];
 
   const handleAddMemberClick = () => {
     setFilteredMember(memberService.getEmptyMember);
@@ -36,32 +40,24 @@ export const Member = () => {
           >
             Add new member +
           </button>
-          <button className="members-filter-btn flex align-center justify-center br-50">
-            <div
-              style={{
-                backgroundImage: `url(${filterIcon})`,
-                width: `20px`,
-                height: `25px`,
-                backgroundSize: `contain`,
-                marginRight: `8px`,
-                backgroundRepeat: `no-repeat`,
-              }}
-            />
-            filter
-          </button>
-          <button className="members-sort-btn flex align-center justify-center br-50">
-            <div
-              style={{
-                backgroundImage: `url(${sortIcon})`,
-                width: `20px`,
-                height: `25px`,
-                backgroundSize: `contain`,
-                marginRight: `8px`,
-                backgroundRepeat: `no-repeat`,
-              }}
-            />
-            sort
-          </button>
+          {buttons.map((button, i) => (
+            <button
+              key={i}
+              className="members-filter-btn flex align-center justify-center br-50"
+            >
+              <div
+                style={{
+                  backgroundImage: `url(${button.icon})`,
+                  width: `1.25rem`,
+                  height: `1.5625rem`,
+                  backgroundSize: `contain`,
+                  marginRight: `0.5rem`,
+                  backgroundRepeat: `no-repeat`,
+                }}
+              />
+              {button.title}
+            </button>
+          ))}
         </div>
         <span>
           Showing <span className="bold">{memberList.length} members</span>

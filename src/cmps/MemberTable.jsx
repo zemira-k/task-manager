@@ -7,33 +7,28 @@ import TableRow from '@mui/material/TableRow';
 import smallBurger from '../assets/icons/smallBurger.svg';
 
 export const MemberTable = ({ members, handleEditMemberClick }) => {
+  const tableHeaders = [
+    { name: '', width: '3.75rem' },
+    { name: 'Full name', width: '21.875rem' },
+    { name: 'Phone number', width: '12.5rem' },
+    { name: 'Team', width: '5.875rem' },
+    { name: 'Start time', width: '9.8125rem' },
+    { name: 'End time', width: '10.5rem' },
+    { name: '', width: '3.75rem' },
+  ];
   return (
     <Table size="small" className="member-table mar-t-63">
       <TableHead>
         <TableRow>
-          <TableCell
-            className="table-header"
-            sx={{ width: `60px` }}
-          ></TableCell>
-          <TableCell className="table-header" sx={{ width: `350px` }}>
-            Full name
-          </TableCell>
-          <TableCell className="table-header" sx={{ width: `200px` }}>
-            Phone number
-          </TableCell>
-          <TableCell
-            className="table-header"
-            sx={{ width: `94px`, margin: `0 32px` }}
-          >
-            Team
-          </TableCell>
-          <TableCell className="table-header" sx={{ width: `157px` }}>
-            Start time
-          </TableCell>
-          <TableCell className="table-header" sx={{ width: `167px` }}>
-            End time
-          </TableCell>
-          <TableCell sx={{ width: `60px` }}></TableCell>
+          {tableHeaders.map((header, i) => (
+            <TableCell
+              key={i}
+              className="table-header"
+              sx={{ width: header.width }}
+            >
+              {header.name}
+            </TableCell>
+          ))}
         </TableRow>
       </TableHead>
       <TableBody>
@@ -41,30 +36,23 @@ export const MemberTable = ({ members, handleEditMemberClick }) => {
           <TableRow key={member._id}>
             <TableCell className="table-content">
               <div
+                className="table-content-type-avatar"
                 style={{
                   backgroundImage: `url(${member.avatar})`,
-                  width: `24px`,
-                  height: `24px`,
-                  backgroundSize: `contain`,
-                  borderRadius: `50%`,
-                  marginRight: `10.5px`,
                 }}
               />
             </TableCell>
             <TableCell className="table-content">{member.name}</TableCell>
             <TableCell className="table-content">{member.phone}</TableCell>
-            <TableCell
-              className="table-content"
-              style={{
-                backgroundColor: `${member.team.color}`,
-                borderRadius: `50px`,
-                width: `94px`,
-                height: `33px`,
-                color: `#ffffff`,
-                letterSpacing: `0.02em`,
-              }}
-            >
-              {member.team.title}
+            <TableCell className="table-content table-content-type-team">
+              <div
+                className="table-content-type-team"
+                style={{
+                  backgroundColor: `${member.team.color}`,
+                }}
+              >
+                {member.team.title}
+              </div>
             </TableCell>
             <TableCell className="table-content">{member.startTime}</TableCell>
             <TableCell className="table-content">{member.endTime}</TableCell>
@@ -75,15 +63,11 @@ export const MemberTable = ({ members, handleEditMemberClick }) => {
               }}
             >
               <button
-                className="clean-btn"
+                className="clean-btn table-content-type-burger"
                 value={member._id}
                 onClick={handleEditMemberClick}
                 style={{
                   backgroundImage: `url(${smallBurger})`,
-                  width: `6px`,
-                  height: `24px`,
-                  backgroundSize: `contain`,
-                  backgroundRepeat: `no-repeat`,
                 }}
               />
             </TableCell>

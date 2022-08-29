@@ -31,6 +31,26 @@ export const AddMember = ({
     startTime: startTime || '08:10:28',
     endTime: endTime || '15:10:50',
   });
+  const formInput1 = [
+    {
+      labelName: 'Full name*',
+      inputName: 'name',
+      type: 'text',
+      defaultValue: name,
+    },
+    {
+      labelName: 'Email address*',
+      inputName: 'mail',
+      type: 'email',
+      defaultValue: mail,
+    },
+    {
+      labelName: 'Phone*',
+      inputName: 'phone',
+      type: 'number',
+      defaultValue: phone,
+    },
+  ];
 
   const handleChange = e => {
     setAddNewMember({ ...addNewMember, [e.target.name]: e.target.value });
@@ -61,48 +81,26 @@ export const AddMember = ({
           ></button>
           <p className="form-title">Member profile</p>
           <div
+            className="avatar"
             style={{
               backgroundImage: `url(${avatar})`,
-              width: `96px`,
-              height: `96px`,
-              backgroundSize: `contain`,
-              borderRadius: `50%`,
             }}
           ></div>
           <div>
             <p className="form-subtitle">Personal Settings</p>
             <div className="flex gap-25">
-              <div className="flex column">
-                <label className="form-label">Full name*</label>
-                <input
-                  className="form-input"
-                  name="name"
-                  defaultValue={name}
-                  onChange={handleChange}
-                ></input>
-              </div>
-              <div className="flex column">
-                <label className="form-label">Email address*</label>
-                <input
-                  className="form-input"
-                  name="mail"
-                  type="email"
-                  defaultValue={mail}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="flex column">
-                <label className="form-label">Phone*</label>
-                <input
-                  className="form-input"
-                  name="phone"
-                  type="number"
-                  minLength={9}
-                  defaultValue={phone}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+              {formInput1.map(input => (
+                <div className="flex column">
+                  <label className="form-label">{input.labelName}</label>
+                  <input
+                    className="form-input"
+                    name={input.inputName}
+                    type={input.type}
+                    defaultValue={input.defaultValue}
+                    onChange={handleChange}
+                  ></input>
+                </div>
+              ))}
             </div>
           </div>
           <div>
@@ -138,24 +136,12 @@ export const AddMember = ({
                   >
                     <button className="search-btn clean-btn flex justify-center">
                       <div
+                        className="search-icon"
                         style={{
                           backgroundImage: `url(${search})`,
-                          width: `12px`,
-                          height: `12px`,
-                          backgroundSize: `contain`,
-                          backgroundRepeat: `no-repeat`,
-                          alignSelf: `center`,
                         }}
                       ></div>
-                      <p
-                        style={{
-                          alignSelf: `center`,
-                          color: `#7A69EE`,
-                          marginLeft: `5px`,
-                        }}
-                      >
-                        search
-                      </p>
+                      <p className="search-text">search</p>
                     </button>
                     <button className="add-btn clean-btn">+ add</button>
                   </div>

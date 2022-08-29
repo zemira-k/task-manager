@@ -8,28 +8,26 @@
 
   .form-title {
     font-weight: 400;
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
     color: #bcb8bb;
     margin: 25px auto 28px;
   }
 
   .form-subtitle {
     font-weight: 400;
-    font-size: 14px;
-    line-height: 23px;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
     color: #797779;
-    margin-top: 14px;
-    margin-bottom: 5px;
-    margin-left: 15px;
+    margin: 14px 0 5px 15px;
   }
 
   .form-input {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 23px;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
     color: #0c060f;
     width: 192px;
     height: 55px;
@@ -40,8 +38,8 @@
 
   .form-label {
     font-weight: 400;
-    font-size: 14px;
-    line-height: 23px;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
     color: #bcb8bb;
     margin-bottom: -10px;
     z-index: 2;
@@ -53,8 +51,8 @@
 
   .save-btn {
     font-weight: 500;
-    font-size: 16px;
-    line-height: 23px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     background-color: $clr-prime1;
     color: #ffffff;
     border: none;
@@ -69,8 +67,8 @@
     border: 1px solid #7a69ee;
     border-radius: 50px;
     font-weight: 400;
-    font-size: 12px;
-    line-height: 23px;
+    font-size: 0.75rem;
+    line-height: 1.5rem;
   }
 
   .add-btn {
@@ -79,6 +77,24 @@
     background: #7a69ee;
     border-radius: 50px;
     color: #ffffff;
+  }
+  .avatar {
+    width: 96px;
+    height: 96px;
+    background-size: contain;
+    border-radius: 50%;
+  }
+  .search-icon {
+    width: 12px;
+    height: 12px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-self: center;
+  }
+  .search-text {
+    align-self: center;
+    color: #7a69ee;
+    margin-left: 5px;
   }
 }
 
