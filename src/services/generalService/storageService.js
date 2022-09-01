@@ -30,9 +30,7 @@ function post(entityType, newEntity) {
 
 function put(entityType, updateEntity) {
   const entities = query(entityType);
-  const index = entities.findIndex(
-    el => el.officialID === updateEntity.officialID
-  );
+  const index = entities.findIndex(el => el._id === updateEntity._id);
   entities[index] = updateEntity;
   _save(entityType, entities);
   return updateEntity;

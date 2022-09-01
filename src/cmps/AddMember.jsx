@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { memberService } from '../services/memberService';
 import { Popup } from './Popup';
 import search from '../assets/icons/search.svg';
 
 export const AddMember = ({
-  isOpen,
-  handleCloseAddMemberClick,
-  filteredMember,
+  closeModalFn,
+  member,
+  addMemberFn,
+  updateMemberFn,
 }) => {
   const {
     _id,
@@ -19,7 +19,7 @@ export const AddMember = ({
     team,
     startTime,
     endTime,
-  } = filteredMember[0];
+  } = member;
   const [addNewMember, setAddNewMember] = useState({
     _id: _id,
     name: name,
@@ -57,24 +57,21 @@ export const AddMember = ({
     setAddNewMember({ ...addNewMember, [e.target.name]: e.target.value });
   };
 
-  const hadleAddSubmit = e => {
-    e.preventDefault();
-    memberService.add(addNewMember);
-    handleCloseAddMemberClick();
+  const hadleAddSubmit = () => {
+    addMemberFn(addNewMember);
+    closeModalFn();
   };
 
-  const hadleEditSubmit = e => {
-    e.preventDefault();
-    memberService.update(addNewMember);
-    handleCloseAddMemberClick();
+  const hadleEditSubmit = () => {
+    updateMemberFn(addNewMember);
+    closeModalFn();
   };
 
   return (
     <Popup
       formWidth="749px"
-      isOpen={isOpen}
       title="Member profile"
-      onClose={handleCloseAddMemberClick}
+      onClose={closeModalFn}
       saveButtonVisible={true}
       onSubmit={name ? hadleEditSubmit : hadleAddSubmit}
     >
@@ -87,8 +84,8 @@ export const AddMember = ({
       <div>
         <p className="form-subtitle">Personal Settings</p>
         <div className="flex gap-25">
-          {formInput1.map(input => (
-            <div className="flex column">
+          {formInput1.map((input, i) => (
+            <div key={i} className="flex column">
               <label className="form-label">{input.labelName}</label>
               <input
                 className="form-input"

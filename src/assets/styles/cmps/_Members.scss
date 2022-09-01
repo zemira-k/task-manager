@@ -1,22 +1,82 @@
-.Members {
-  margin: 0 20px;
-  font-family: poppins;
-  .members-add-button {
-    background-color: $clr-prime1;
-    color: #ffffff;
-    border: none;
-    width: 265px;
-    height: 45px;
-  }
-  .members-filter-btn,
-  .members-sort-btn {
-    border: 1px solid #7a69ee;
-    width: 118px;
-    height: 42px;
-    font-weight: 500;
+// .Members {
+//   margin: 0 20px;
+//   font-family: poppins;
+//   .members-add-button {
+//     background-color: $clr-prime1;
+//     color: #ffffff;
+//     border: none;
+//     width: 265px;
+//     height: 45px;
+//   }
+//   .members-filter-btn,
+//   .members-sort-btn {
+//     border: 1px solid #7a69ee;
+//     width: 118px;
+//     height: 42px;
+//     font-weight: 500;
+//     font-size: 1rem;
+//     line-height: 1.5rem;
+//     color: $clr-prime1;
+//     background-color: #ffffff;
+//   }
+// }
+
+.member-page {
+  .MuiChip-root {
+    color: $clr-chip-font;
+    letter-spacing: 0.02em;
     font-size: 1rem;
-    line-height: 1.5rem;
-    color: $clr-prime1;
-    background-color: #ffffff;
+  }
+
+  .member {
+    &.done {
+      opacity: 0.6;
+    }
+  }
+
+  .actions {
+    margin-bottom: 4rem;
+
+    .members-add-button {
+      background-color: $clr-prime1;
+      color: #ffffff;
+      border: none;
+      width: 265px;
+      height: 45px;
+    }
+
+    .members-filter-btn,
+    .members-sort-btn {
+      border: 1px solid #7a69ee;
+      width: 118px;
+      height: 42px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 23px;
+      color: $clr-prime1;
+      background-color: #ffffff;
+    }
+
+    .members-filter-btn {
+      .filter-icon {
+        background-image: url('../../icons/filter.svg');
+        width: 20px;
+        height: 25px;
+        background-size: contain;
+        margin-right: 8px;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .members-sort-btn {
+      .sort-icon {
+        background-image: url('../../icons/sort.svg');
+        width: 20px;
+        height: 25px;
+        background-size: contain;
+        margin-right: 8px;
+        background-repeat: no-repeat;
+      }
+    }
   }
 }

@@ -1,65 +1,82 @@
+.css-1nivjwv-MuiButtonBase-root-MuiCheckbox-root {
+  color: $clr-prime1;
+}
 .task-page {
+  .MuiChip-root {
+    color: $clr-chip-font;
+    letter-spacing: 0.02em;
+    font-size: 1rem;
+    width: 94px;
+    .css-6od3lo-MuiChip-label {
+      padding: 0;
+    }
+  }
+  .task {
+    &:hover {
+      background-color: $clr-secondary2;
+    }
+    &.done {
+      opacity: 0.6;
+    }
+  }
+  .comment-icon {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 9px;
+  }
 
-    .MuiChip-root {
-        color: $clr-chip-font;
-        letter-spacing: 0.02em;
-        font-size: 1rem;
+  .table-content-type-burger {
+    width: 6px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .actions {
+    margin-bottom: 4rem;
+
+    .tasks-add-button {
+      background-color: $clr-prime1;
+      color: #ffffff;
+      border: none;
+      width: 265px;
+      height: 45px;
     }
 
-    .task {
-        &.done {
-            opacity: 0.6;
-
-        }
+    .tasks-filter-btn,
+    .tasks-sort-btn {
+      border: 1px solid $clr-prime1;
+      width: 118px;
+      height: 42px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 23px;
+      color: $clr-prime1;
+      background-color: #ffffff;
     }
 
-    .actions {
-        margin-bottom: 4rem;
-
-        .tasks-add-button {
-            background-color: $clr-prime1;
-            color: #ffffff;
-            border: none;
-            width: 265px;
-            height: 45px;
-
-        }
-
-        .tasks-filter-btn,
-        .tasks-sort-btn {
-            border: 1px solid #7a69ee;
-            width: 118px;
-            height: 42px;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 23px;
-            color: $clr-prime1;
-            background-color: #ffffff;
-        }
-
-        .tasks-filter-btn {
-            .filter-icon {
-
-                background-image: url('../../icons/filter.svg');
-                width: 20px;
-                height: 25px;
-                background-size: contain;
-                margin-right: 8px;
-                background-repeat: no-repeat;
-
-            }
-
-        }
-
-        .tasks-sort-btn {
-            .sort-icon {
-                background-image: url('../../icons/sort.svg');
-                width: 20px;
-                height: 25px;
-                background-size: contain;
-                margin-right: 8px;
-                background-repeat: no-repeat;
-            }
-        }
+    .tasks-filter-btn {
+      .filter-icon {
+        background-image: url('../../icons/filter.svg');
+        width: 20px;
+        height: 25px;
+        background-size: contain;
+        margin-right: 8px;
+        background-repeat: no-repeat;
+      }
     }
+
+    .tasks-sort-btn {
+      .sort-icon {
+        background-image: url('../../icons/sort.svg');
+        width: 20px;
+        height: 25px;
+        background-size: contain;
+        margin-right: 8px;
+        background-repeat: no-repeat;
+      }
+    }
+  }
 }
