@@ -1,79 +1,58 @@
-import React, { useState } from 'react';
-
-import { AddMember } from '../cmps/AddMember';
-import sortIcon from '../assets/icons/sort.svg';
-import filterIcon from '../assets/icons/filter.svg';
+import { useState } from 'react';
 import { MemberTable } from '../cmps/MemberTable';
-
 import { memberService } from '../services/memberService';
+import { AddMember } from '../cmps/AddMember';
 
 export const Member = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [filteredMember, setFilteredMember] = useState({});
-  let memberList = memberService.query();
-  const buttons = [
-    { title: 'filter', icon: sortIcon },
-    { title: 'sort', icon: filterIcon },
-  ];
+  const [members, setMembers] = useState(memberService.query());
+  const [memberToUpdate, setMemberToUpdate] = useState(null);
 
-  const handleAddMemberClick = () => {
-    setFilteredMember(memberService.getEmptyMember);
-    setIsOpen(true);
-  };
+  function onUpdateMember(memberToUpdate) {
+    memberService.update(memberToUpdate);
+    setMembers(prevMembers =>
+      prevMembers.map(member => {
+        if (member._id === memberToUpdate._id) return memberToUpdate;
+        return member;
+      })
+    );
+  }
 
-  const handleEditMemberClick = event => {
-    setFilteredMember(memberService.getById(event.target.value));
-    setIsOpen(true);
-  };
+  function onAddMember(memberToAdd) {
+    memberService.add(memberToAdd);
+    setMembers(prevMembers => [...prevMembers, memberToAdd]);
+  }
 
-  const handleCloseAddMemberClick = () => {
-    setIsOpen(false);
-  };
-
+  if (!members) return <div>loading..</div>;
   return (
-    <section className="Members">
-      <div className="left flex space-between align-center gap-1 mar-t-56">
+    <section className="member-page main-page pad-1">
+      <section className="actions left flex space-between align-center gap-1 mar-t-56">
         <div className="left flex align-center gap-1">
           <button
             className="members-add-button fs20 lh-35 br-10"
-            onClick={handleAddMemberClick}
+            onClick={() => setMemberToUpdate(memberService.getEmptyMember())}
           >
             Add new member +
           </button>
-          {buttons.map((button, i) => (
-            <button
-              key={i}
-              className="members-filter-btn flex align-center justify-center br-50"
-            >
-              <div
-                style={{
-                  backgroundImage: `url(${button.icon})`,
-                  width: `1.25rem`,
-                  height: `1.5625rem`,
-                  backgroundSize: `contain`,
-                  marginRight: `0.5rem`,
-                  backgroundRepeat: `no-repeat`,
-                }}
-              />
-              {button.title}
-            </button>
-          ))}
+          <button className="members-filter-btn flex align-center justify-center br-50">
+            <div className="filter-icon" />
+            filter
+          </button>
+          <button className="members-sort-btn flex align-center justify-center br-50">
+            <div className="sort-icon" />
+            sort
+          </button>
         </div>
         <span>
-          Showing <span className="bold">{memberList.length} members</span>
+          Showing <span className="bold">{members.length} members</span>
         </span>
-      </div>
-      <React.Fragment>
-        <MemberTable
-          members={memberList}
-          handleEditMemberClick={handleEditMemberClick}
-        />
-      </React.Fragment>
-      {isOpen && (
+      </section>
+      <MemberTable members={members} setMemberToUpdate={setMemberToUpdate} />
+      {!!memberToUpdate && (
         <AddMember
-          isOpen={isOpen}
-          handleCloseAddMemberClick={handleCloseAddMemberClick}
-          filteredMember={filteredMember}
+          member={memberToUpdate}
+          addMemberFn={onAddMember}
+          updateMemberFn={onUpdateMember}
+          closeModalFn={() => setMemberToUpdate(null)}
         />
       )}
     </section>

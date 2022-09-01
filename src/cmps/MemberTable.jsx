@@ -6,7 +6,7 @@ import TableRow from '@mui/material/TableRow';
 
 import smallBurger from '../assets/icons/smallBurger.svg';
 
-export const MemberTable = ({ members, handleEditMemberClick }) => {
+export const MemberTable = ({ members, setMemberToUpdate }) => {
   const tableHeaders = [
     { name: '', width: '3.75rem' },
     { name: 'Full name', width: '21.875rem' },
@@ -32,47 +32,50 @@ export const MemberTable = ({ members, handleEditMemberClick }) => {
         </TableRow>
       </TableHead>
       <TableBody>
-        {members.map(member => (
-          <TableRow key={member._id}>
-            <TableCell className="table-content">
-              <div
-                className="table-content-type-avatar"
+        {members.map(member => {
+          return (
+            <TableRow key={member._id}>
+              <TableCell className="table-content">
+                <div
+                  className="table-content-type-avatar"
+                  style={{
+                    backgroundImage: `url(${member.avatar})`,
+                  }}
+                />
+              </TableCell>
+              <TableCell className="table-content">{member.name}</TableCell>
+              <TableCell className="table-content">{member.phone}</TableCell>
+              <TableCell className="table-content table-content-type-team">
+                <div
+                  className="table-content-type-team"
+                  style={{
+                    backgroundColor: `${member.team.color}`,
+                  }}
+                >
+                  {member.team.title}
+                </div>
+              </TableCell>
+              <TableCell className="table-content">
+                {member.startTime}
+              </TableCell>
+              <TableCell className="table-content">{member.endTime}</TableCell>
+              <TableCell
+                className="table-content"
                 style={{
-                  backgroundImage: `url(${member.avatar})`,
-                }}
-              />
-            </TableCell>
-            <TableCell className="table-content">{member.name}</TableCell>
-            <TableCell className="table-content">{member.phone}</TableCell>
-            <TableCell className="table-content table-content-type-team">
-              <div
-                className="table-content-type-team"
-                style={{
-                  backgroundColor: `${member.team.color}`,
+                  textAlign: `-webkit-left`,
                 }}
               >
-                {member.team.title}
-              </div>
-            </TableCell>
-            <TableCell className="table-content">{member.startTime}</TableCell>
-            <TableCell className="table-content">{member.endTime}</TableCell>
-            <TableCell
-              className="table-content"
-              style={{
-                textAlign: `-webkit-left`,
-              }}
-            >
-              <button
-                className="clean-btn table-content-type-burger"
-                value={member._id}
-                onClick={handleEditMemberClick}
-                style={{
-                  backgroundImage: `url(${smallBurger})`,
-                }}
-              />
-            </TableCell>
-          </TableRow>
-        ))}
+                <button
+                  className="clean-btn table-content-type-burger"
+                  onClick={() => setMemberToUpdate(member)}
+                  style={{
+                    backgroundImage: `url(${smallBurger})`,
+                  }}
+                />
+              </TableCell>
+            </TableRow>
+          );
+        })}
       </TableBody>
     </Table>
   );

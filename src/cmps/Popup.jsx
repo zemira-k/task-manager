@@ -1,15 +1,12 @@
 export const Popup = props => {
-  let { formWidth, isOpen, onClose, title, saveButtonVisible, onSubmit } =
-    props;
+  let { formWidth, onClose, title, saveButtonVisible, onSubmit } = props;
   const hadleSubmit = e => {
     e.preventDefault();
     onSubmit();
   };
-  const handleClosebuttonClick = () => {
-    onClose();
-  };
+
   return (
-    <div className={`popup ${isOpen ? 'popup-open' : ''}`}>
+    <div className="popup popup-open">
       <div
         className="form-container"
         style={{
@@ -20,10 +17,7 @@ export const Popup = props => {
           className="flex column align-center justify-center"
           onSubmit={hadleSubmit}
         >
-          <button
-            onClick={handleClosebuttonClick}
-            className="popup-close clean-btn"
-          ></button>
+          <button onClick={onClose} className="popup-close clean-btn"></button>
           <p className="form-title">{title}</p>
           {props.children}
           {saveButtonVisible && (
