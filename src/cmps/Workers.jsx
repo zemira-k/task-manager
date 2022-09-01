@@ -32,23 +32,26 @@ export const Workers = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {members.map(member => (
-            <TableRow key={member._id}>
-              <TableCell className="table-content">
-                <div
-                  className="member-avatar"
-                  style={{
-                    backgroundImage: `url(${member.avatar})`,
-                  }}
-                />
-              </TableCell>
-              <TableCell className="table-content">{member.name}</TableCell>
-              <TableCell className="table-content">
-                {member.startTime}
-              </TableCell>
-              <TableCell className="table-content">{member.endTime}</TableCell>
-            </TableRow>
-          ))}
+          {members &&
+            members.map(member => (
+              <TableRow key={member._id}>
+                <TableCell className="table-content">
+                  <div
+                    className="member-avatar"
+                    style={{
+                      backgroundImage: `url(${member.avatar})`,
+                    }}
+                  />
+                </TableCell>
+                <TableCell className="table-content">{member.name}</TableCell>
+                <TableCell className="table-content">
+                  {member.startTime}
+                </TableCell>
+                <TableCell className="table-content">
+                  {member.endTime}
+                </TableCell>
+              </TableRow>
+            ))}
         </TableBody>
       </Table>
     </div>
