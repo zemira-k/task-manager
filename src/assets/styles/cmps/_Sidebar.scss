@@ -1,139 +1,130 @@
 .side-bar {
+  .css-10hburv-MuiTypography-root {
+    font-family: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+  }
 
-    .css-10hburv-MuiTypography-root {
-        font-family: inherit;
-        font-weight: inherit;
-        letter-spacing: inherit;
+  &.open {
+    .MuiListItemButton-root {
+      gap: 8px;
+    }
+  }
+
+  .css-2dum1v-MuiDrawer-docked .MuiDrawer-paper {
+    min-width: 64px;
+    width: calc(64px + 3rem);
+
+    .css-10hburv-MuiTypography-root,
+    .MuiListItemButton-root {
+      font-size: calc(1rem - 3px);
+      .list-item-note {
+        font-size: 0.75rem;
+        line-height: 1.5rem;
+        position: absolute;
+        background-color: rgba(55, 15, 77, 0.6);
+        border-radius: 4px;
+        left: 45px;
+        z-index: 5;
+        display: block;
+      }
     }
 
-    &.open {
-        .MuiListItemButton-root {
-            gap: 8px;
-        }
+    .MuiListItemButton-root {
+      justify-content: center;
+      height: 32px;
+      width: 32px;
+      padding: 1.4rem 1rem;
+      margin: auto;
     }
 
-    .css-2dum1v-MuiDrawer-docked .MuiDrawer-paper {
-        min-width: 64px;
-        width: calc(64px + 3rem);
+    .css-tlelie-MuiListItemText-root {
+      flex: auto;
+      margin: 0;
+    }
+  }
 
-        .css-10hburv-MuiTypography-root,
-        .MuiListItemButton-root {
-            font-size: calc(1rem - 3px);
+  .css-1hsz34s-MuiDrawer-docked .MuiDrawer-paper {
+    padding: 0;
+
+    .MuiListItemButton-root {
+      border-radius: 0;
+    }
+  }
+
+  .MuiPaper-root {
+    padding-top: calc(1rem - 5px);
+    padding-left: calc(1rem - 5px);
+    padding-right: calc(1rem - 5px);
+  }
+
+  .MuiIconButton-root {
+    &:hover {
+      background: transparent;
+
+      &:hover {
+        background: transparent;
+        background-color: transparent;
+        // color: $clr-prime4;
+
+        svg {
+          path {
+            // fill: $clr-prime4;
+          }
         }
-
-        .MuiListItemButton-root {
-            justify-content: center;
-            height: 70px;
-            width: 70px;
-            padding: 1.4rem 1rem;
-            margin: auto;
-        }
-
-        .css-tlelie-MuiListItemText-root {
-            flex: auto;
-            margin: 0;
-
-        }
+      }
     }
 
-    .css-1hsz34s-MuiDrawer-docked .MuiDrawer-paper {
-        padding: 0;
+    svg.menu-icon {
+      width: 28px;
+      // fill: $clr-prime3;
+    }
+  }
 
-        .MuiListItemButton-root {
-            border-radius: 0;
+  .MuiListItem-root {
+    // color: $clr-prime3;
+
+    .MuiListItemButton-root {
+      &:hover {
+        background: transparent;
+        // color: $clr-prime4;
+
+        svg {
+          path {
+            // fill: $clr-prime4;
+          }
         }
+      }
     }
 
-    .MuiPaper-root {
-        padding-top: calc(1rem - 5px);
-        padding-left: calc(1rem - 5px);
-        padding-right: calc(1rem - 5px);
+    .MuiListItemIcon-root {
+      margin: 0;
+
+      svg {
+        path {
+          //   fill: $clr-prime3;
+        }
+      }
     }
+  }
 
+  .active {
+    // color: $clr-prime2;
+    font-weight: 600;
 
+    &:hover .MuiListItemButton-root,
+    .MuiListItemButton-root {
+      //   background-color: #8724bd;
+      //   box-shadow: inset 0px 8px 9px rgba(91, 76, 204, 0.2);
+      border-radius: 5px;
 
+      svg {
+        // fill: $clr-prime2;
 
-
-    .MuiIconButton-root {
-
-
-        &:hover {
-            background: transparent;
-
-            &:hover {
-                background: transparent;
-                background-color: transparent;
-                color: $clr-prime4;
-
-                svg {
-                    path {
-                        fill: $clr-prime4;
-                    }
-                }
-            }
-
+        path {
+          // fill: $clr-prime2;
         }
-
-        svg.menu-icon {
-            width: 28px;
-            fill: $clr-prime3;
-        }
+      }
     }
-
-
-
-    .MuiListItem-root {
-        color: $clr-prime3;
-
-
-
-
-        .MuiListItemButton-root {
-
-            &:hover {
-                background: transparent;
-                color: $clr-prime4;
-
-                svg {
-                    path {
-                        fill: $clr-prime4;
-                    }
-                }
-            }
-
-        }
-
-        .MuiListItemIcon-root {
-            margin: 0;
-
-            svg {
-                path {
-
-                    fill: $clr-prime3;
-                }
-            }
-        }
-    }
-
-    .active {
-        color: $clr-prime2;
-        font-weight: 600;
-
-        &:hover .MuiListItemButton-root,
-        .MuiListItemButton-root {
-            background-color: $clr-prime;
-            box-shadow: inset 0px 8px 9px rgba(91, 76, 204, 0.2);
-            border-radius: 5px;
-
-            svg {
-                fill: $clr-prime2;
-
-                path {
-                    fill: $clr-prime2;
-                }
-            }
-        }
-
-
-    }
+  }
 }

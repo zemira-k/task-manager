@@ -40,8 +40,9 @@ function getEmptyTask() {
   return {
     time: { from: `${currHour}:00`, to: `${currHour + 1}:00` }, // When does the task need to be done
     title: '',
-    teams: [],
+    teams: [{ _id: '', title: 'Cleaning', color: '' }],
     members: [],
+    comments: 0,
     createdAt: new Date(), // Task creation date
     status: 'todo', // todo/done
   };
@@ -52,8 +53,10 @@ function getEmptyTask() {
 function _filter(tasks, filter) {
   let filterTasks = tasks.filter(
     task =>
-      task.priority >= filter.priority &&
-      (task.title.include(filter.text) || task.desc.include(filter.text))
+      (filter.priority && task.priority >= filter.priority) ||
+      (filter.title && task.title === filter.text) ||
+      (filter.desc && task.desc.include(filter.text)) ||
+      (filter.status && task.status === filter.status)
   );
   return filterTasks;
 }

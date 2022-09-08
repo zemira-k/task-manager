@@ -26,21 +26,23 @@ export const Task = () => {
   return (
     <section className="task-page main-page pad-1">
       <section className="actions left flex space-between align-center gap-1 mar-t-56">
-        <div className="left flex align-center gap-1">
+        <div className="left flex align-center">
           <button
             className="tasks-add-button fs20 lh-35 br-10"
             onClick={() => setTaskToUpdate(taskService.getEmptyTask())}
           >
-            Add new task +
+            Add a task +
           </button>
-          <button className="tasks-filter-btn flex align-center justify-center br-50">
-            <div className="filter-icon" />
-            filter
-          </button>
-          <button className="tasks-sort-btn flex align-center justify-center br-50">
-            <div className="sort-icon" />
-            sort
-          </button>
+          <div className="bottons-container left flex align-center gap-1">
+            <button className="tasks-filter-btn flex align-center justify-center br-50">
+              <div className="filter-icon" />
+              filter (0)
+            </button>
+            <button className="tasks-sort-btn flex align-center justify-center br-50">
+              <div className="sort-icon" />
+              sort
+            </button>
+          </div>
         </div>
         <span>
           Showing <span className="bold">{tasks.length} tasks</span>

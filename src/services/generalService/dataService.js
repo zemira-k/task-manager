@@ -1,4 +1,4 @@
-import { Task, Member, Team } from '../../data/dummyData';
+import { Task, Member, Team, Comment } from '../../data/dummyData';
 import { storageService } from './storageService';
 
 export const dataService = {
@@ -10,6 +10,7 @@ function initData() {
   storageService.newEntity('task', Task);
   storageService.newEntity('member', Member);
   storageService.newEntity('team', Team);
+  storageService.newEntity('comment', Comment);
 }
 
 function removeData() {
