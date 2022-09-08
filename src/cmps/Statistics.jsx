@@ -1,8 +1,8 @@
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 
-export const Statistics = () => {
+export const Statistics = ({ dailyPrecentage }) => {
   const statisticsContent = [
-    { percentage: 65, text: 'Daily tasks completed' },
+    { percentage: dailyPrecentage, text: 'Daily tasks completed' },
     { percentage: 35, text: 'Weekly tasks completed' },
     { percentage: 25, text: 'Monthly tasks completed' },
   ];

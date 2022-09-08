@@ -3,6 +3,7 @@ import { Statistics } from '../cmps/Statistics';
 import { DailyTasks } from '../cmps/Daily-tasks';
 import { WorkersPreview } from '../cmps/WorkersPreview';
 import { Comments } from '../cmps/Comments';
+import { taskService } from '../services/taskService';
 import statisticsIcon from '../assets/icons/statistics.svg';
 import dailyTasksIcon from '../assets/icons/daily-tasks.svg';
 import popupIcon from '../assets/icons/popup.svg';
@@ -12,6 +13,34 @@ import commentsIcon from '../assets/icons/comments.svg';
 export const Overview = () => {
   const [isWorkersPopupOpen, setIsWorkersPopupOpen] = useState(false);
   const [isCommentsPopupOpen, setIsCommentsPopupOpen] = useState(false);
+
+  const [tasks, setTasks] = useState(taskService.query());
+  const [dailyTaskCompleted, setDailyTaskCompleted] = useState(
+    taskService.query({ status: 'done' })
+  );
+  const [dailyPrecentage, setDailyPrecentage] = useState(
+    Math.round((dailyTaskCompleted.length / tasks.length) * 100)
+  );
+
+  React.useEffect(() => {
+    if (dailyTaskCompleted.length >= 0) {
+      setDailyPrecentage(
+        Math.round((dailyTaskCompleted.length / tasks.length) * 100)
+      );
+    }
+  }, [dailyTaskCompleted, tasks, dailyTaskCompleted.length]);
+
+  function onUpdateTask(taskToUpdate) {
+    taskService.update(taskToUpdate);
+    setTasks(prevTasks =>
+      prevTasks.map(task => {
+        if (task._id === taskToUpdate._id) return taskToUpdate;
+        return task;
+      })
+    );
+    setDailyTaskCompleted(taskService.query({ status: 'done' }));
+  }
+
   const handlePopupClick = e => {
     handleCloseClick();
     e.target.name === 'Workers'
@@ -25,14 +54,14 @@ export const Overview = () => {
   };
   const overviewTitles = [
     {
-      component: <Statistics />,
+      component: <Statistics dailyPrecentage={dailyPrecentage} />,
       class: 'item1',
       title: 'Statistics',
       icon: statisticsIcon,
       popupIcon: false,
     },
     {
-      component: <DailyTasks />,
+      component: <DailyTasks tasks={tasks} onUpdateTask={onUpdateTask} />,
       class: 'item2',
       title: 'Daily-tasks',
       icon: dailyTasksIcon,
@@ -70,8 +99,8 @@ export const Overview = () => {
     <div>
       <div className="grid-container">
         {overviewTitles.map((title, i) => (
-          <div key={i} className={`${title.class} flex column`}>
-            <div className="flex align-center space-between w-91 center-self">
+          <div key={i} className={`${title.class} grid-item flex column`}>
+            <div className="flex align-center space-between w-91 center-self mb-1">
               <div className="flex title-container">
                 <div
                   className="title-icon"

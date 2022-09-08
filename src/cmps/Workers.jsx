@@ -23,7 +23,7 @@ export const Workers = () => {
             {tableHeaders.map((header, i) => (
               <TableCell
                 key={i}
-                className="table-header"
+                className="table-header workers-header"
                 sx={{ width: header.width }}
               >
                 {header.name}
