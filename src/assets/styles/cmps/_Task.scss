@@ -1,6 +1,9 @@
 .css-1nivjwv-MuiButtonBase-root-MuiCheckbox-root {
   color: $clr-prime1;
 }
+.css-hbqe0v-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  border-radius: 9px;
+}
 .task-page {
   .MuiChip-root {
     color: $clr-chip-font;
@@ -10,6 +13,10 @@
     .css-6od3lo-MuiChip-label {
       padding: 0;
     }
+  }
+  .form-container {
+    margin: auto;
+    width: 90%;
   }
   .task {
     &:hover {
@@ -26,6 +33,27 @@
     background-repeat: no-repeat;
     margin-right: 9px;
   }
+  .css-18915je-MuiButtonBase-root-MuiCheckbox-root,
+  .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
+    color: #8724bd;
+    &.Mui-checked {
+      color: #8724bd;
+    }
+  }
+  .css-1ul0gmj-MuiButtonBase-root-MuiCheckbox-root {
+    color: #8724bd;
+  }
+  .css-1ul0gmj-MuiButtonBase-root-MuiCheckbox-root.Mui-checked {
+    color: #8724bd;
+  }
+  .task {
+    // &:hover {
+    //   background-color: $clr-secondary2;
+    // }
+    &.done {
+      opacity: 0.6;
+    }
+  }
 
   .table-content-type-burger {
     width: 6px;
@@ -34,34 +62,67 @@
     background-repeat: no-repeat;
   }
 
+  .members {
+    border: none;
+  }
+
+  .addMember {
+    background-image: url(../../icons/addMemberPlus.svg);
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 13px;
+  }
+
+  .members-label {
+    margin-bottom: 0;
+    background-color: transparent;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+  }
+
   .actions {
     margin-bottom: 4rem;
 
     .tasks-add-button {
-      background-color: $clr-prime1;
+      background-color: #8724bd;
       color: #ffffff;
+      border-radius: 10px;
       border: none;
-      width: 265px;
+      width: 150px;
       height: 45px;
+    }
+
+    .bottons-container {
+      padding-left: 20px;
+      margin-left: 20px;
+      border-left: 1px solid #bcb8bb;
+      height: 50px;
     }
 
     .tasks-filter-btn,
     .tasks-sort-btn {
-      border: 1px solid $clr-prime1;
-      width: 118px;
+      border: none;
+      width: 120px;
       height: 42px;
       font-weight: 500;
       font-size: 16px;
       line-height: 23px;
-      color: $clr-prime1;
-      background-color: #ffffff;
+      color: #8724bd;
+      background-color: #f4eafb;
+      border-radius: 10px;
     }
 
     .tasks-filter-btn {
       .filter-icon {
         background-image: url('../../icons/filter.svg');
-        width: 20px;
-        height: 25px;
+        width: 26px;
+        height: 26px;
         background-size: contain;
         margin-right: 8px;
         background-repeat: no-repeat;
@@ -71,8 +132,8 @@
     .tasks-sort-btn {
       .sort-icon {
         background-image: url('../../icons/sort.svg');
-        width: 20px;
-        height: 25px;
+        width: 26px;
+        height: 27px;
         background-size: contain;
         margin-right: 8px;
         background-repeat: no-repeat;
