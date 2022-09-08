@@ -26,6 +26,9 @@
   border: 1px solid rgba(0, 0, 0, 0.23);
   border-radius: 9px;
   padding-left: 15px;
+  &.task {
+    width: auto;
+  }
 }
 
 .form-label {
@@ -74,4 +77,12 @@
   align-self: center;
   color: #7a69ee;
   margin-left: 5px;
+}
+
+.days {
+  width: auto;
+  align-items: center;
+  padding: 0 17px;
+  letter-spacing: 0.015em;
+  color: #bdbdbd;
 }

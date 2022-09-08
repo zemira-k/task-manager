@@ -26,21 +26,23 @@ export const Member = () => {
   return (
     <section className="member-page main-page pad-1">
       <section className="actions left flex space-between align-center gap-1 mar-t-56">
-        <div className="left flex align-center gap-1">
+        <div className="left flex align-center">
           <button
             className="members-add-button fs20 lh-35 br-10"
             onClick={() => setMemberToUpdate(memberService.getEmptyMember())}
           >
-            Add new member +
+            Add a member +
           </button>
-          <button className="members-filter-btn flex align-center justify-center br-50">
-            <div className="filter-icon" />
-            filter
-          </button>
-          <button className="members-sort-btn flex align-center justify-center br-50">
-            <div className="sort-icon" />
-            sort
-          </button>
+          <div className="bottons-container left flex align-center gap-1">
+            <button className="members-filter-btn flex align-center justify-center br-50">
+              <div className="filter-icon" />
+              filter (0)
+            </button>
+            <button className="members-sort-btn flex align-center justify-center br-50">
+              <div className="sort-icon" />
+              sort
+            </button>
+          </div>
         </div>
         <span>
           Showing <span className="bold">{members.length} members</span>

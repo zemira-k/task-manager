@@ -60,10 +60,10 @@ function getEmptyMember() {
 function _filter(members, filter) {
   let filterMembers = members.filter(
     member =>
-      filter.phone &&
-      member.phone === filter.phone &&
-      ((filter.name && member.name.include(filter.name)) ||
-        (filter.role && member.role.include(filter.role)))
+      (filter.phone && member.phone === filter.phone) ||
+      (filter.name && member.name.include(filter.name)) ||
+      (filter.role && member.role.include(filter.role)) ||
+      (filter.team && member.team.title === filter.team)
   );
   return filterMembers;
 }
