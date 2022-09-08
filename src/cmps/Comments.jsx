@@ -1,31 +1,48 @@
-import { Popup } from '../cmps/Popup';
-import avatar from '../assets/imgs/demo-members/1.jpg';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableRow from '@mui/material/TableRow';
+
+import { commentService } from '../services/commentService';
 
 export const Comments = props => {
-  let { isOpen, onClose, title } = props;
+  let comments = commentService.query();
   return (
     <div className="comments">
-      <div className="flex space-between align-center">
-        <div className="flex align-center">
-          <div
-            className="comments-avatar"
-            style={{
-              backgroundImage: `url(${avatar})`,
-            }}
-          />
-          <p>Emptying rubbish and bins</p>
-        </div>
-        <p>44m ago</p>
-      </div>
-      {isOpen && (
-        <Popup
-          formWidth="749px"
-          isOpen={isOpen}
-          onClose={onClose}
-          title={title}
-          saveButtonVisible={false}
-        ></Popup>
-      )}
+      <Table size="small" aria-label="simple table">
+        <TableBody>
+          {comments &&
+            comments.map(comment => {
+              return (
+                <TableRow
+                  key={comment._id}
+                  className="flex space-between align-center"
+                >
+                  <TableCell className="table-content">
+                    <div
+                      className="comments-avatar"
+                      style={{
+                        backgroundImage: `url(${
+                          comment.outComment[comment.outComment.length - 1]
+                            .avatar
+                        })`,
+                      }}
+                    />
+                  </TableCell>
+                  <TableCell className="table-content comment-title">
+                    {comment.task}
+                  </TableCell>
+                  <TableCell
+                    className="table-content"
+                    sx={{ color: '#797779' }}
+                  >
+                    44m ago
+                  </TableCell>
+                </TableRow>
+              );
+            })}
+        </TableBody>
+      </Table>
     </div>
   );
 };

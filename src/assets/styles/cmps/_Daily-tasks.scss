@@ -1,0 +1,32 @@
+.Daily-tasks {
+  width: 100%;
+  .css-rqglhn-MuiTable-root,
+  .css-15wwp11-MuiTableHead-root {
+    width: 90%;
+    margin: 17px auto;
+  }
+  .table-content {
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    letter-spacing: 0.005em;
+    color: #0b0830;
+    border-bottom: none;
+    padding: 0;
+  }
+  .css-1ul0gmj-MuiButtonBase-root-MuiCheckbox-root {
+    color: #8724bd;
+  }
+  .css-1ul0gmj-MuiButtonBase-root-MuiCheckbox-root.Mui-checked {
+    color: #8724bd;
+  }
+  .task {
+    // &:hover {
+    //   background-color: $clr-secondary2;
+    // }
+    &.done {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+  }
+}

@@ -1,8 +1,8 @@
 .statistics {
   .progress-bar-container {
-    gap: 8.125rem;
     margin: auto;
-    max-width: min-content;
+    max-width: 569px;
+    justify-content: space-between;
   }
   .CircularProgressbar-text {
     transform: translate(-22px, 10px);
