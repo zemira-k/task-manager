@@ -4,11 +4,11 @@ export const Task = [
   {
     _id: '123',
     title: 'Emptying rubbish and bins',
-    time: {
-      from: `${new Date().getHours()}:00`,
-      to: `${new Date().getHours() + 1}:00`,
-    }, // When does the task need to be done
-
+    // time: {
+    //   from: `${new Date().getHours()}:00`,
+    //   to: `${new Date().getHours() + 1}:00`,
+    // }, // When does the task need to be done
+    time: '01:00 - 01:30',
     teams: [{ _id: '01', title: 'Cleaning', color: '#08C7E0' }],
     members: [
       {
@@ -31,10 +31,136 @@ export const Task = [
   {
     _id: '124',
     title: 'Making dinner for tonight',
-    time: {
-      from: `${new Date().getHours()}:00`,
-      to: `${new Date().getHours() + 1}:00`,
-    }, // When does the task need to be done
+    time: '01:00 - 01:30',
+    // time: {
+    //   from: `${new Date().getHours()}:00`,
+    //   to: `${new Date().getHours() + 1}:00`,
+    // }, // When does the task need to be done
+
+    teams: [{ _id: '02', title: 'Kitchen', color: '#FD838F' }],
+    members: [
+      {
+        _id: 'ds32a',
+        fullname: 'barak bachar',
+        avatar: 'https://randomuser.me/api/portraits/women/61.jpg',
+        role: 'chef',
+      },
+    ],
+    comments: 3,
+
+    createdAt: new Date(Date.now() - 60 * 1000 ** 2 * 24), // Task creation date
+    status: 'todo', // todo/done
+  },
+  {
+    _id: '125',
+    title: 'Laundry, ironing and wardrobe',
+    time: '01:00 - 01:30',
+    // time: {
+    //   from: `${new Date().getHours()}:00`,
+    //   to: `${new Date().getHours() + 1}:00`,
+    // }, // When does the task need to be done
+
+    teams: [{ _id: '01', title: 'Cleaning', color: '#08C7E0' }],
+    members: [
+      {
+        _id: '12',
+        fullname: 'Sara omami',
+        avatar: Avatar1,
+        role: 'Cleaner',
+      },
+      {
+        _id: 'yf58t',
+        fullname: 'Victor Jones',
+        avatar: 'https://randomuser.me/api/portraits/men/65.jpg',
+        role: 'Cleaner',
+      },
+    ],
+    comments: 1,
+    createdAt: new Date(Date.now() - 60 * 1000 ** 2 * 24), // Task creation date
+    status: 'todo', // todo/done
+  },
+  {
+    _id: '126',
+    title: 'Tutoring chemistry',
+    time: '01:00 - 01:30',
+    // time: {
+    //   from: `${new Date().getHours()}:00`,
+    //   to: `${new Date().getHours() + 1}:00`,
+    // }, // When does the task need to be done
+
+    teams: [{ _id: '03', title: 'Childcare', color: '#FFAD7A' }],
+    members: [
+      {
+        _id: 'ds32a',
+        fullname: 'barak bachar',
+        avatar: 'https://randomuser.me/api/portraits/women/61.jpg',
+        role: 'chef',
+      },
+    ],
+    comments: 3,
+
+    createdAt: new Date(Date.now() - 60 * 1000 ** 2 * 24), // Task creation date
+    status: 'done', // todo/done
+  },
+  {
+    _id: '127',
+    title: 'Pet care, including feeding, walking and taking to the vet',
+    time: '01:00 - 01:30',
+    // time: {
+    //   from: `${new Date().getHours()}:00`,
+    //   to: `${new Date().getHours() + 1}:00`,
+    // }, // When does the task need to be done
+
+    teams: [{ _id: '03', title: 'Childcare', color: '#FFAD7A' }],
+    members: [
+      {
+        _id: 'ds32a',
+        fullname: 'barak bachar',
+        avatar: 'https://randomuser.me/api/portraits/women/61.jpg',
+        role: 'chef',
+      },
+    ],
+    comments: 0,
+
+    createdAt: new Date(Date.now() - 60 * 1000 ** 2 * 24), // Task creation date
+    status: 'todo', // todo/done
+  },
+  {
+    _id: '128',
+    title: 'Buy tickets to Paul McCartney concert',
+    time: '01:00 - 01:30',
+    // time: {
+    //   from: `${new Date().getHours()}:00`,
+    //   to: `${new Date().getHours() + 1}:00`,
+    // }, // When does the task need to be done
+
+    teams: [{ _id: '03', title: 'Childcare', color: '#FFAD7A' }],
+    members: [
+      {
+        _id: '12',
+        fullname: 'Sara omami',
+        avatar: Avatar1,
+        role: 'Cleaner',
+      },
+      {
+        _id: 'yf58t',
+        fullname: 'Victor Jones',
+        avatar: 'https://randomuser.me/api/portraits/men/65.jpg',
+        role: 'Cleaner',
+      },
+    ],
+    comments: 5,
+    createdAt: new Date(Date.now() - 60 * 1000 ** 2 * 24), // Task creation date
+    status: 'todo', // todo/done
+  },
+  {
+    _id: '129',
+    title: 'Shopping fruits',
+    time: '01:00 - 01:30',
+    // time: {
+    //   from: `${new Date().getHours()}:00`,
+    //   to: `${new Date().getHours() + 1}:00`,
+    // }, // When does the task need to be done
 
     teams: [{ _id: '02', title: 'Kitchen', color: '#FD838F' }],
     members: [
@@ -157,7 +283,7 @@ export const Team = [
   { _id: '03', title: 'Childcare', color: '#FFAD7A' },
 ];
 
-export const Comments = [
+export const Comment = [
   {
     _id: '01',
     task: 'Emptying rubbish and bins',
@@ -182,6 +308,26 @@ export const Comments = [
   {
     _id: '02',
     task: 'Laundry, ironing and wardrobe',
+    outComment: [
+      {
+        name: 'Victor Jones',
+        avatar: 'https://randomuser.me/api/portraits/men/65.jpg',
+        text: 'Can I get help here?',
+        createdAt: new Date(Date.now() - 60 * 1000 ** 2 * 24),
+      },
+    ],
+    inComment: [
+      {
+        name: '',
+        avatar: '',
+        text: '',
+        createdAt: new Date(Date.now() - 60 * 1000 ** 2 * 24),
+      },
+    ],
+  },
+  {
+    _id: '03',
+    task: 'Pet care, including feeding, walking and taking to the vet',
     outComment: [
       {
         name: 'Victor Jones',
