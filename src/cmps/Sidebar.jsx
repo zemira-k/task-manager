@@ -137,6 +137,7 @@ export const Sidebar = () => {
                   >
                     <el.icon />
                   </ListItemIcon>
+                  {/* <span className="list-item-note">{el.txt}</span> */}
                   <ListItemText primary={el.txt} />
                 </ListItemButton>
               </NavLink>
@@ -170,7 +171,7 @@ export const Sidebar = () => {
                 <Avatar
                   className="column"
                   sx={{
-                    border: '3px solid #5B4CCC',
+                    border: '2px solid #8724BD',
                     width: '32px',
                     height: '32px',
                     flexDirection: isOpen ? 'row' : 'column',
@@ -178,7 +179,6 @@ export const Sidebar = () => {
                   src={DemoMemberAvatar}
                 />
               </ListItemIcon>
-              <ListItemText primary={'Sarah'} />
             </ListItemButton>
           </ListItem>
           {[{ icon: LogoutIcon, txt: 'Logout' }].map(el => (
@@ -206,7 +206,7 @@ export const Sidebar = () => {
                 >
                   <el.icon />
                 </ListItemIcon>
-                <ListItemText primary={el.txt} />
+                {/* <ListItemText primary={el.txt} /> */}
               </ListItemButton>
             </ListItem>
           ))}
