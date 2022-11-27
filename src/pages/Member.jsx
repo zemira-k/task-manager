@@ -45,7 +45,10 @@ export const Member = () => {
           </div>
         </div>
         <span>
-          Showing <span className="bold">{members.length} members</span>
+          Showing{' '}
+          <span className="bold">
+            {members.length >= 5 ? 5 : members.length} members
+          </span>
         </span>
       </section>
       <MemberTable members={members} setMemberToUpdate={setMemberToUpdate} />

@@ -9,7 +9,7 @@ export const Task = [
     //   to: `${new Date().getHours() + 1}:00`,
     // }, // When does the task need to be done
     time: '01:00 - 01:30',
-    teams: [{ _id: '01', title: 'Cleaning', color: '#08C7E0' }],
+    team: { _id: '01', title: 'Cleaning', color: '#08C7E0' },
     members: [
       {
         _id: '12',
@@ -31,13 +31,13 @@ export const Task = [
   {
     _id: '124',
     title: 'Making dinner for tonight',
-    time: '01:00 - 01:30',
+    time: '02:00 - 02:30',
     // time: {
     //   from: `${new Date().getHours()}:00`,
     //   to: `${new Date().getHours() + 1}:00`,
     // }, // When does the task need to be done
 
-    teams: [{ _id: '02', title: 'Kitchen', color: '#FD838F' }],
+    team: { _id: '02', title: 'Kitchen', color: '#FD838F' },
     members: [
       {
         _id: 'ds32a',
@@ -54,13 +54,13 @@ export const Task = [
   {
     _id: '125',
     title: 'Laundry, ironing and wardrobe',
-    time: '01:00 - 01:30',
+    time: '01:30 - 02:00',
     // time: {
     //   from: `${new Date().getHours()}:00`,
     //   to: `${new Date().getHours() + 1}:00`,
     // }, // When does the task need to be done
 
-    teams: [{ _id: '01', title: 'Cleaning', color: '#08C7E0' }],
+    team: { _id: '01', title: 'Cleaning', color: '#08C7E0' },
     members: [
       {
         _id: '12',
@@ -88,7 +88,7 @@ export const Task = [
     //   to: `${new Date().getHours() + 1}:00`,
     // }, // When does the task need to be done
 
-    teams: [{ _id: '03', title: 'Childcare', color: '#FFAD7A' }],
+    team: { _id: '03', title: 'Childcare', color: '#FFAD7A' },
     members: [
       {
         _id: 'ds32a',
@@ -111,7 +111,7 @@ export const Task = [
     //   to: `${new Date().getHours() + 1}:00`,
     // }, // When does the task need to be done
 
-    teams: [{ _id: '03', title: 'Childcare', color: '#FFAD7A' }],
+    team: { _id: '03', title: 'Childcare', color: '#FFAD7A' },
     members: [
       {
         _id: 'ds32a',
@@ -134,7 +134,7 @@ export const Task = [
     //   to: `${new Date().getHours() + 1}:00`,
     // }, // When does the task need to be done
 
-    teams: [{ _id: '03', title: 'Childcare', color: '#FFAD7A' }],
+    team: { _id: '03', title: 'Childcare', color: '#FFAD7A' },
     members: [
       {
         _id: '12',
@@ -162,7 +162,7 @@ export const Task = [
     //   to: `${new Date().getHours() + 1}:00`,
     // }, // When does the task need to be done
 
-    teams: [{ _id: '02', title: 'Kitchen', color: '#FD838F' }],
+    team: { _id: '02', title: 'Kitchen', color: '#FD838F' },
     members: [
       {
         _id: 'ds32a',
@@ -271,7 +271,7 @@ export const Member = [
     mail: 'stacy@gmail.com',
     role: 'cleaner',
     officialID: '125436369',
-    team: { _id: '02', title: 'Kitchen', color: '#FD838F' },
+    team: { _id: '01', title: 'Cleaning', color: '#08C7E0' },
     startTime: '08:10:28',
     endTime: '15:10:50',
   },

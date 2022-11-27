@@ -40,7 +40,7 @@ function getEmptyTask() {
   return {
     time: { from: `${currHour}:00`, to: `${currHour + 1}:00` }, // When does the task need to be done
     title: '',
-    teams: [{ _id: '', title: 'Cleaning', color: '' }],
+    team: { _id: '', title: 'Cleaning', color: '' },
     members: [],
     comments: 0,
     createdAt: new Date(), // Task creation date

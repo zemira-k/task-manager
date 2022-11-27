@@ -36,10 +36,8 @@ function update(team) {
 function _filter(teams, filter) {
   let filterTeams = teams.filter(
     team =>
-      filter.title &&
-      team.title === filter.title &&
-      ((filter.title && team.title.include(filter.title)) ||
-        (filter.color && team.color.include(filter.color)))
+      (filter.title && team.title === filter.title) ||
+      (filter.color && team.color === filter.color)
   );
   return filterTeams;
 }

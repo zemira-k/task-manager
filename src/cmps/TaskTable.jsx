@@ -13,7 +13,7 @@ import smallBurger from '../assets/icons/smallBurger.svg';
 const tableHeaders = [
   { name: 'Hours', width: '8.75rem' },
   { name: 'Task', width: '22.5rem' },
-  { name: 'Teams', width: '12.25rem' },
+  { name: 'Team', width: '12.25rem' },
   { name: 'Members', width: '13rem' },
   { name: 'Comments', width: '7.5rem' },
   { name: '', width: '3.75rem' },
@@ -112,25 +112,21 @@ export const TaskTable = ({ tasks, updateTaskFn, setTaskToUpdate }) => {
                 {/* {task.time.from + ' - ' + task.time.to} */}
               </TableCell>
               <TableCell sx={{ borderBottom: 0 }}>{task.title}</TableCell>
-              {task.teams.map(team => (
-                <TableCell
-                  key={team._id}
-                  align="center"
-                  sx={{ borderBottom: 0 }}
-                >
-                  <div className="flex content-center align-center">
-                    <div
-                      className="dot"
-                      style={{
-                        backgroundColor: team.color,
-                      }}
-                    />
-                    <p style={{ fontSize: '1rem', marginLeft: '9px' }}>
-                      {team.title}
-                    </p>
-                  </div>
-                </TableCell>
-              ))}
+
+              <TableCell align="center" sx={{ borderBottom: 0 }}>
+                <div className="flex content-center align-center">
+                  <div
+                    className="dot"
+                    style={{
+                      backgroundColor: task.team.color,
+                    }}
+                  />
+                  <p style={{ fontSize: '1rem', marginLeft: '9px' }}>
+                    {task.team.title}
+                  </p>
+                </div>
+              </TableCell>
+
               <TableCell align="center" sx={{ borderBottom: 0 }}>
                 <AvatarGroup max={4} sx={{ justifyContent: 'left' }}>
                   {task.members.map(member => (

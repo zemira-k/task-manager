@@ -45,7 +45,10 @@ export const Task = () => {
           </div>
         </div>
         <span>
-          Showing <span className="bold">{tasks.length} tasks</span>
+          Showing{' '}
+          <span className="bold">
+            {tasks.length >= 5 ? 5 : tasks.length} tasks
+          </span>
         </span>
       </section>
       <TaskTable
