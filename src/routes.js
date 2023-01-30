@@ -14,7 +14,7 @@ export const routes = [
     title: 'Tasks',
   },
   {
-    path: 'https://zemira-k.github.io/task-manager/',
+    path: '/',
     element: <Overview />,
     title: 'Overview',
   },
