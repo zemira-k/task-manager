@@ -19,11 +19,11 @@ export const App = () => {
     dataService.removeData();
     dataService.initData();
   }, []);
-
+  
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <Router basename="/">
+        <Router basename={process.env.BASE_URL === 'production' ? process.env.URL_ADRESS : '/'}>
           <main className="main-content relative flex">
             <header>
               <AppHeader />
