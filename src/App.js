@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { dataService } from './services/generalService/dataService';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter , Routes, Route } from 'react-router-dom';
 import { AppHeader } from './cmps/layout/AppHeader';
 import { routes } from './routes.js';
 import { Sidebar } from './cmps/Sidebar';
@@ -23,7 +23,7 @@ export const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <Router basename="/">
+        <HashRouter basename="/">
           <main className="main-content relative flex">
             <header>
               <AppHeader />
@@ -41,7 +41,7 @@ export const App = () => {
             </section>
           </main>
           <Sidebar />
-        </Router>
+        </HashRouter>
       </div>
       <Fab
         color="secondary"

@@ -44,6 +44,7 @@
       "last 1 safari version"
     ]
   },
+  "homepage": "http://zemira-k.github.io/task-manager/",
   "devDependencies": {
     "gh-pages": "^5.0.0"
   }
