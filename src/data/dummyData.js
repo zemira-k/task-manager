@@ -79,29 +79,29 @@ export const Task = [
     createdAt: new Date(Date.now() - 60 * 1000 ** 2 * 24), // Task creation date
     status: 'todo', // todo/done
   },
-  // {
-  //   _id: '126',
-  //   title: 'Tutoring chemistry',
-  //   time: '01:00 - 01:30',
-  //   // time: {
-  //   //   from: `${new Date().getHours()}:00`,
-  //   //   to: `${new Date().getHours() + 1}:00`,
-  //   // }, // When does the task need to be done
+  {
+    _id: '126',
+    title: 'Tutoring chemistry',
+    time: '01:00 - 01:30',
+    // time: {
+    //   from: `${new Date().getHours()}:00`,
+    //   to: `${new Date().getHours() + 1}:00`,
+    // }, // When does the task need to be done
 
-  //   team: { _id: '03', title: 'Childcare', color: '#FFAD7A' },
-  //   members: [
-  //     {
-  //       _id: 'ds32a',
-  //       fullname: 'barak bachar',
-  //       avatar: 'https://randomuser.me/api/portraits/women/61.jpg',
-  //       role: 'chef',
-  //     },
-  //   ],
-  //   comments: 3,
+    team: { _id: '03', title: 'Childcare', color: '#FFAD7A' },
+    members: [
+      {
+        _id: 'ds32a',
+        fullname: 'barak bachar',
+        avatar: 'https://randomuser.me/api/portraits/women/61.jpg',
+        role: 'chef',
+      },
+    ],
+    comments: 3,
 
-  //   createdAt: new Date(Date.now() - 60 * 1000 ** 2 * 24), // Task creation date
-  //   status: 'done', // todo/done
-  // },
+    createdAt: new Date(Date.now() - 60 * 1000 ** 2 * 24), // Task creation date
+    status: 'done', // todo/done
+  },
   {
     _id: '127',
     title: 'Pet care, including feeding, walking and taking to the vet',

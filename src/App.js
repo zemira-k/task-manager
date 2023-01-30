@@ -23,7 +23,7 @@ export const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <Router>
+        <Router basename="/">
           <main className="main-content relative flex">
             <header>
               <AppHeader />
