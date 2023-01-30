@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { dataService } from './services/generalService/dataService';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { AppHeader } from './cmps/layout/AppHeader';
 import { routes } from './routes.js';
 import { Sidebar } from './cmps/Sidebar';
@@ -19,11 +19,11 @@ export const App = () => {
     dataService.removeData();
     dataService.initData();
   }, []);
-  
+
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <Router basename={process.env.BASE_URL === 'production' ? process.env.URL_ADRESS : '/'}>
+        <Router>
           <main className="main-content relative flex">
             <header>
               <AppHeader />
