@@ -27,9 +27,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./src/assets/imgs/6.png)
-![](./src/assets/imgs/7.png)
-![](./src/assets/imgs/8.png)
+![](./src/assets/imgs/screen-capture.gif)
+
 ![](./src/assets/imgs/9.png)
 
 ### Links
